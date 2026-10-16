@@ -1,0 +1,2046 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>PET B1 Course</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* Layout: colourful hero + 3 coloured section cards; theory = sidebar index + article with a coloured title band; every topic group has its own hue */
+:root {
+  --paper: #f2f4fb;
+  --surface: #ffffff;
+  --ink: #0f1a33;
+  --muted: #556079;
+  --line: #d8ddec;
+  --mark: #f3e84a;
+  --mark-soft: #fbf5b8;
+  --ok: #107a4a;
+  --bad: #c0281c;
+  --blue: #2a43f0;   --blue-s: #e3e8ff;
+  --violet: #7a3ff0; --violet-s: #eee5ff;
+  --pink: #d91a6c;   --pink-s: #ffe2ef;
+  --orange: #d4550a; --orange-s: #ffe8d4;
+  --green: #0b8450;  --green-s: #d6f4e5;
+  --teal: #0a7f92;   --teal-s: #d3f1f6;
+  --red: #cf2f24;    --red-s: #ffe0dc;
+  --on-c: #ffffff;
+  --hero-a: #2a43f0; --hero-b: #7a3ff0;
+  --accent: var(--blue);
+  --font-display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0b1120; --surface: #141c33; --ink: #e8ecf7; --muted: #a3acc4; --line: #2a3452;
+    --mark: #8a7f12; --mark-soft: #2f2c0e; --ok: #4cd197; --bad: #ff8a7e;
+    --blue: #8fa1ff; --blue-s: #1b2350; --violet: #b79bff; --violet-s: #2a1f55; --pink: #ff7ab3; --pink-s: #4a1530;
+    --orange: #ffa05a; --orange-s: #4a2a10; --green: #4cd197; --green-s: #0f3a29; --teal: #4cc9dc; --teal-s: #0d3a43;
+    --red: #ff8a7e; --red-s: #4a1d19; --on-c: #0b1120; --hero-a: #2f3fc4; --hero-b: #5d2fb8;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0b1120; --surface: #141c33; --ink: #e8ecf7; --muted: #a3acc4; --line: #2a3452;
+  --mark: #8a7f12; --mark-soft: #2f2c0e; --ok: #4cd197; --bad: #ff8a7e;
+  --blue: #8fa1ff; --blue-s: #1b2350; --violet: #b79bff; --violet-s: #2a1f55; --pink: #ff7ab3; --pink-s: #4a1530;
+  --orange: #ffa05a; --orange-s: #4a2a10; --green: #4cd197; --green-s: #0f3a29; --teal: #4cc9dc; --teal-s: #0d3a43;
+  --red: #ff8a7e; --red-s: #4a1d19; --on-c: #0b1120; --hero-a: #2f3fc4; --hero-b: #5d2fb8;
+  color-scheme: dark;
+}
+.c-blue { --c: var(--blue); --cs: var(--blue-s); }
+.c-violet { --c: var(--violet); --cs: var(--violet-s); }
+.c-pink { --c: var(--pink); --cs: var(--pink-s); }
+.c-orange { --c: var(--orange); --cs: var(--orange-s); }
+.c-green { --c: var(--green); --cs: var(--green-s); }
+.c-teal { --c: var(--teal); --cs: var(--teal-s); }
+.c-red { --c: var(--red); --cs: var(--red-s); }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font: 17px/1.6 var(--font-body); }
+a { color: var(--accent); }
+h1, h2, h3, h4, h5 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0 0 0.8em; max-width: 72ch; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.wrap { width: 100%; max-width: 1180px; margin-inline: auto; padding-inline: 16px; }
+#app.enter { animation: rise .4s ease-out backwards; }
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+
+/* header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--surface); border-bottom: 3px solid transparent; border-image: linear-gradient(90deg, var(--blue), var(--violet), var(--pink), var(--orange), var(--green)) 1; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 8px 20px; flex-wrap: wrap; padding-block: 10px; }
+.logo { font: 800 1.4rem/1 var(--font-display); text-decoration: none; color: var(--ink); display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em; }
+.logo b { background: var(--mark); padding: 2px 8px 3px; border-radius: 4px; color: #0f1a33; transform: rotate(-3deg); display: inline-block; }
+.logo small { font: 700 0.7rem/1 var(--font-body); color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+.nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav a { text-decoration: none; color: var(--ink); font: 700 0.85rem/1 var(--font-body); letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 14px; border-radius: 999px; transition: background .15s; }
+.nav a:hover { background: var(--paper); }
+.nav a[data-sec="theory"][aria-current] { background: var(--blue); color: var(--on-c); }
+.nav a[data-sec="exams"][aria-current] { background: var(--pink); color: var(--on-c); }
+.nav a[data-sec="lessons"][aria-current] { background: var(--green); color: var(--on-c); }
+
+main { padding-bottom: 64px; }
+main > .wrap:first-child { padding-top: 28px; }
+.eyebrow { font: 700 0.75rem/1 var(--font-body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; display: block; }
+.eyebrow.light { color: rgba(255,255,255,.85); }
+.page-title { font-size: clamp(2.1rem, 5vw, 3.3rem); font-weight: 800; margin-bottom: 12px; text-transform: uppercase; }
+.lead { font-size: 1.15rem; }
+.lead.light { color: #fff; }
+.hl { background: var(--mark-soft); padding: 0 4px; border-radius: 3px; font-weight: 700; }
+.cta { display: inline-flex; align-items: center; gap: 8px; background: var(--c, var(--blue)); color: var(--on-c); font-weight: 700; padding: 12px 20px; border-radius: 999px; text-decoration: none; border: 0; transition: transform .15s, box-shadow .15s; }
+.cta:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+.cta.big { background: #fff; color: #1d2fb8; font-size: 1.05rem; padding: 14px 24px; }
+
+/* home */
+.hero2 { position: relative; overflow: hidden; background: linear-gradient(120deg, var(--hero-a), var(--hero-b)); color: #fff; padding-block: 44px 52px; }
+.hero-in { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.hero2 h1 { font-size: clamp(2.8rem, 8.5vw, 5.4rem); font-weight: 800; line-height: .98; text-transform: uppercase; }
+.hero2 h1 mark { background: var(--mark); color: #0f1a33; padding: 0 .12em; border-radius: 6px; display: inline-block; transform: rotate(-2deg); }
+.blob { position: absolute; border-radius: 50%; opacity: .9; animation: float 9s ease-in-out infinite; }
+.blob.b1 { width: 220px; height: 220px; background: #ff4f9a; right: -50px; top: -70px; opacity: .55; }
+.blob.b2 { width: 120px; height: 120px; background: #ffb23f; left: 42%; bottom: -50px; animation-delay: -3s; opacity: .7; }
+.blob.b3 { width: 80px; height: 80px; background: #2fe0a8; left: 6%; top: 18px; animation-delay: -6s; opacity: .55; }
+@keyframes float { 50% { transform: translateY(-16px) rotate(8deg); } }
+.hero-card { background: var(--surface); color: var(--ink); border-radius: 16px; padding: 18px; display: grid; gap: 14px; box-shadow: 0 14px 40px rgba(0,0,0,.25); }
+.rwrap { display: flex; align-items: center; gap: 14px; }
+.rwrap b { display: block; font: 800 1.5rem/1 var(--font-display); }
+.rwrap span { color: var(--muted); }
+.ring { width: 84px; height: 84px; flex: none; }
+.ring circle { fill: none; stroke-width: 9; }
+.ring .rb { stroke: var(--line); }
+.ring .rf { stroke: var(--green); stroke-linecap: round; transform: rotate(-90deg); transform-origin: 50% 50%; transition: stroke-dasharray .6s; }
+.ring text { font: 800 17px var(--font-display); fill: var(--ink); }
+.facts { display: grid; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; overflow: hidden; }
+.facts div { display: flex; justify-content: space-between; gap: 12px; padding: 9px 14px; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.facts div:last-child { border-bottom: 0; }
+.facts span { color: var(--muted); }
+.facts b { font-variant-numeric: tabular-nums; text-align: right; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); gap: 16px; margin-top: -26px; position: relative; z-index: 2; }
+.card { background: var(--c); color: var(--on-c); border-radius: 14px; padding: 24px; text-decoration: none; display: flex; flex-direction: column; gap: 10px; min-width: 0; transition: transform .2s, box-shadow .2s; animation: rise .5s ease-out backwards; animation-delay: calc(var(--i, 0) * 90ms + 150ms); box-shadow: 0 8px 22px rgba(0,0,0,.14); }
+.card:hover { transform: translateY(-5px) rotate(-.4deg); box-shadow: 0 16px 34px rgba(0,0,0,.22); }
+.card .eyebrow { color: inherit; opacity: .85; }
+.card h2 { font-size: 2rem; text-transform: uppercase; }
+.card p { margin: 0; opacity: .95; }
+.card .go { margin-top: auto; font-weight: 700; }
+.strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; margin-top: 18px; padding: 18px 24px; border-radius: 14px; background: var(--cs); border: 2px dashed var(--c); text-decoration: none; color: var(--ink); transition: transform .2s; }
+.strip:hover { transform: scale(1.01); }
+.strip b { font: 800 1.35rem var(--font-display); display: block; text-transform: uppercase; }
+.strip .go { font-weight: 800; color: var(--c); }
+
+/* theory index */
+.group { margin-top: 30px; }
+.group h2, .lgroup h2 { font-size: 1.55rem; margin-bottom: 12px; text-transform: uppercase; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px; }
+.group h2 i, .lgroup h2 i, .toc h4 i { width: 14px; height: 14px; border-radius: 4px; background: var(--c); display: inline-block; flex: none; transform: rotate(45deg); }
+.tlist { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); gap: 10px; }
+.tlist h5 { grid-column: 1 / -1; font: 800 .8rem/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--on-c); background: var(--c); padding: 6px 12px; border-radius: 999px; justify-self: start; margin-top: 8px; }
+.tlist a { background: var(--cs); border-radius: 10px; padding: 13px 15px; text-decoration: none; color: var(--ink); display: flex; flex-direction: column; gap: 3px; min-width: 0; border: 2px solid transparent; transition: transform .15s, border-color .15s; }
+.tlist a:hover { border-color: var(--c); transform: translateY(-3px); }
+.tlist b { font: 700 1rem/1.2 var(--font-display); text-transform: uppercase; }
+.tlist span { color: var(--muted); font-size: .9rem; }
+
+/* theory topic */
+.split { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 32px; align-items: start; }
+.toc { position: sticky; top: calc(76px + env(safe-area-inset-top, 0px)); max-height: calc(100vh - 100px); overflow-y: auto; padding-right: 8px; }
+.toc h4 { font: 800 .75rem/1.3 var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--ink); margin: 18px 0 6px; display: flex; gap: 8px; align-items: center; }
+.toc h4:first-child { margin-top: 0; }
+.toc h5 { font: 700 .68rem/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--c); margin: 10px 10px 2px; }
+.toc a { display: block; padding: 5px 10px; text-decoration: none; color: var(--ink); border-radius: 6px; font-size: .93rem; line-height: 1.35; text-transform: uppercase; letter-spacing: .02em; }
+.toc a:hover { background: var(--surface); }
+.toc a[aria-current="page"] { background: var(--mark); color: #0f1a33; font-weight: 800; }
+.mtoc { display: none; margin-bottom: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.mtoc summary { padding: 12px 14px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: .06em; }
+.mtoc .toc { position: static; max-height: 60vh; padding: 0 10px 12px; }
+
+.article { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; min-width: 0; overflow: hidden; }
+.thead { background: var(--c); color: var(--on-c); padding: clamp(20px, 4vw, 34px); position: relative; overflow: hidden; }
+.thead::after { content: ""; position: absolute; right: -40px; top: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255,255,255,.16); }
+.thead .eyebrow { color: inherit; opacity: .85; }
+.thead h1 { font-size: clamp(1.9rem, 4.8vw, 3rem); font-weight: 800; text-transform: uppercase; position: relative; z-index: 1; }
+.thead .sub { margin: 8px 0 0; font-size: 1.08rem; opacity: .95; position: relative; z-index: 1; }
+.abody { padding: clamp(18px, 4vw, 38px); }
+.abody h3 { font-size: 1.25rem; margin: 32px 0 10px; text-transform: uppercase; letter-spacing: .02em; color: var(--c); display: flex; align-items: center; gap: 10px; }
+.abody h3::before { content: ""; width: 12px; height: 12px; background: var(--c); border-radius: 3px; transform: rotate(45deg); flex: none; }
+.abody > h3:first-child { margin-top: 0; }
+.abody ul, .abody ol { padding-left: 1.25em; margin: 0 0 1em; max-width: 72ch; }
+.abody li { margin-bottom: .3em; }
+.formula { display: inline-block; font: 600 .98rem/1.5 var(--font-mono); background: var(--c); color: var(--on-c); padding: 9px 16px; border-radius: 8px; max-width: 100%; overflow-wrap: anywhere; }
+.exs { display: grid; gap: 8px; margin: 10px 0 18px; }
+.ex { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 2px 20px; padding: 10px 14px; border-radius: 10px; background: var(--cs); }
+.ex .en { font-weight: 700; min-width: 0; overflow-wrap: anywhere; }
+.ex .es { color: var(--muted); font-style: italic; min-width: 0; overflow-wrap: anywhere; }
+.note { background: var(--mark-soft); border: 2px dashed var(--mark); border-radius: 10px; padding: 12px 16px; margin: 14px 0 8px; font-size: .98rem; max-width: 72ch; }
+.tw { overflow-x: auto; margin: 12px 0 18px; border: 1px solid var(--line); border-radius: 10px; }
+.tw.tall { max-height: 70vh; overflow-y: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: .96rem; }
+th { text-align: left; font: 800 .74rem/1.3 var(--font-body); letter-spacing: .08em; text-transform: uppercase; color: var(--ink); background: var(--cs, var(--paper)); padding: 10px 12px; white-space: nowrap; position: sticky; top: 0; }
+td { padding: 9px 12px; border-top: 1px solid var(--line); vertical-align: top; }
+tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--cs, var(--paper)) 35%, transparent); }
+td:first-child { font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; max-width: none; }
+.chips span { font: 600 .88rem/1 var(--font-mono); border-radius: 999px; padding: 7px 12px; background: var(--cs); }
+ol.uses { list-style: none; padding: 0; counter-reset: u; display: grid; gap: 10px; max-width: none; }
+ol.uses > li { counter-increment: u; position: relative; padding-left: 46px; margin: 0; }
+ol.uses > li::before { content: counter(u); position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--c); color: var(--on-c); font: 800 .95rem/32px var(--font-display); text-align: center; }
+ol.uses > li > b { display: block; margin-bottom: 4px; }
+ol.uses .ex { margin-top: 2px; }
+ol.freq { list-style: none; counter-reset: f; padding: 0; display: grid; gap: 6px; max-width: 34rem; }
+ol.freq li { counter-increment: f; display: grid; grid-template-columns: 1.6em 11rem minmax(0, 1fr) auto; align-items: center; gap: 8px; margin: 0; font-size: .96rem; }
+ol.freq li::before { content: counter(f); font: 800 .8rem var(--font-mono); color: var(--muted); }
+ol.freq li b { font-weight: 700; }
+ol.freq li i { height: 10px; border-radius: 99px; background: var(--cs); position: relative; overflow: hidden; }
+ol.freq li i::after { content: ""; position: absolute; inset: 0 auto 0 0; width: calc(var(--p) * 1%); background: var(--c); border-radius: 99px; }
+ol.freq li span { font: 600 .78rem var(--font-mono); color: var(--muted); text-align: right; white-space: nowrap; }
+.pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 40px; flex-wrap: wrap; }
+.pager a { flex: 1 1 14rem; text-decoration: none; background: var(--cs); border-radius: 10px; padding: 12px 16px; color: var(--ink); min-width: 0; text-transform: uppercase; font: 700 .95rem/1.3 var(--font-display); border: 2px solid transparent; transition: border-color .15s, transform .15s; }
+.pager a:hover { border-color: var(--c); transform: translateY(-2px); }
+.pager small { display: block; color: var(--muted); font: 700 .7rem var(--font-body); letter-spacing: .12em; }
+.pager a.next { text-align: right; }
+.slot { border: 2px dashed var(--c, var(--line)); border-radius: 12px; padding: 30px 20px; text-align: center; color: var(--muted); background: var(--cs, var(--surface)); }
+.slot b { display: block; color: var(--ink); font: 700 1.2rem var(--font-display); margin-bottom: 4px; }
+/* conditionals / passive tables */
+.ct td.cc { font-weight: 700; text-align: center; background: var(--cs); vertical-align: middle; white-space: nowrap; border-right: 1px solid var(--line); }
+.ct td.cr { font-weight: 700; white-space: nowrap; }
+.ct tr.band td { background: var(--c); color: var(--on-c); text-transform: uppercase; letter-spacing: .12em; font: 800 .85rem var(--font-body); text-align: center; padding: 8px; border-top: 0; }
+.ct .es, .es { color: var(--muted); font-style: italic; }
+.pt td:first-child { white-space: nowrap; }
+
+/* irregular verbs */
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0 16px; }
+.tabs button { border: 2px solid var(--c); background: transparent; color: var(--ink); font-weight: 700; padding: 9px 18px; border-radius: 999px; }
+.tabs button[aria-selected="true"] { background: var(--c); color: var(--on-c); }
+.irr-tools { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin-bottom: 8px; }
+.irr-tools input { font: inherit; flex: 1 1 18rem; padding: 10px 14px; border: 2px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); }
+.irr-tools span { color: var(--muted); font-weight: 600; }
+table.irr { min-width: 40rem; }
+table.irr small { font: 500 .78rem var(--font-mono); color: var(--muted); }
+table.irr td:first-child { font-weight: 400; }
+table.irr.game input { width: 100%; min-width: 7rem; font: inherit; padding: 5px 9px; border: 2px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); }
+table.irr.game input.ok { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, var(--surface)); }
+table.irr.game input.bad { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 12%, var(--surface)); }
+table.irr.game td.given { background: var(--c); color: var(--on-c); font: 800 1.05rem var(--font-display); vertical-align: middle; }
+.sol { display: block; color: var(--ok); font-weight: 700; font-size: .88rem; }
+.irr-game h3 { margin-top: 4px; }
+
+/* exams */
+.subnav { display: flex; flex-wrap: wrap; gap: 6px; margin: 18px 0 26px; }
+.subnav a { text-decoration: none; padding: 9px 16px; background: var(--cs, var(--surface)); border-radius: 999px; font-weight: 700; color: var(--ink); font-size: .95rem; border: 2px solid transparent; }
+.subnav a:not([class]) { background: var(--surface); border-color: var(--line); }
+.subnav a[aria-current="page"] { background: var(--c, var(--ink)); color: var(--on-c, var(--surface)); }
+.papers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 14px; margin: 16px 0 28px; }
+.paper { background: var(--c); color: var(--on-c); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; min-width: 0; transition: transform .2s; animation: rise .5s ease-out backwards; animation-delay: calc(var(--i, 0) * 80ms); }
+.paper:hover { transform: translateY(-4px) rotate(-.5deg); }
+.paper h3 { font-size: 1.7rem; text-transform: uppercase; }
+.paper .meta { opacity: .92; font-size: .92rem; }
+.paper .w { font: 800 .85rem var(--font-mono); background: rgba(255,255,255,.22); align-self: flex-start; padding: 3px 9px; border-radius: 99px; }
+.paper .go { margin-top: auto; font-weight: 700; }
+.section-h { font-size: 1.5rem; margin: 34px 0 12px; text-transform: uppercase; }
+.part { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin-bottom: 12px; display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 4px 18px; }
+.part .pn { grid-row: span 3; width: 68px; height: 68px; border-radius: 16px; background: var(--c); color: var(--on-c); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.part .pn small { font: 800 .6rem/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; }
+.part .pn b { font: 800 2rem/1 var(--font-display); }
+.part h3 { font-size: 1.2rem; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
+.part h3 > span:last-child { font: 600 .85rem var(--font-mono); color: var(--muted); }
+.part p { margin: 0; }
+.part .tip { font-size: .95rem; color: var(--muted); }
+.part .tip b { color: var(--c); }
+.bubs { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+.bubs i { font: 700 .66rem/1 var(--font-mono); font-style: normal; width: 24px; height: 16px; border: 2px solid var(--c); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--c); }
+.bubs i:nth-child(1) { background: var(--c); color: var(--on-c); }
+.disclaimer { font-size: .92rem; color: var(--muted); margin-top: 28px; }
+
+/* lessons */
+.progress-box { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin: 18px 0 28px; display: grid; gap: 10px; }
+.progress-box .row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.progress-box .big { font: 800 2.6rem/1 var(--font-display); font-variant-numeric: tabular-nums; color: var(--green); }
+.bar { height: 16px; background: var(--paper); border: 2px solid var(--ink); border-radius: 999px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--violet), var(--pink), var(--orange), var(--green)); border-radius: 999px; transition: width .5s; }
+.lgroup { margin-bottom: 30px; }
+.lgroup h2 span { font: 600 .88rem var(--font-mono); color: var(--muted); text-transform: none; }
+details.lesson { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 8px; overflow: hidden; }
+details.lesson > summary { padding: 13px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; list-style: none; font: 700 1rem var(--font-display); text-transform: uppercase; background: var(--cs); }
+details.lesson > summary::-webkit-details-marker { display: none; }
+details.lesson > summary::after { content: "+"; font: 400 1.5rem/1 var(--font-mono); color: var(--c); }
+details.lesson[open] > summary::after { content: "–"; }
+details.lesson .st { margin-left: auto; font: 700 .82rem var(--font-mono); background: var(--c); color: var(--on-c); padding: 3px 9px; border-radius: 99px; font-variant-numeric: tabular-nums; }
+details.lesson.done .st { background: var(--ok); color: var(--on-c); }
+.tasks { padding: 12px 16px 16px; display: grid; gap: 10px; }
+.task { display: flex; gap: 12px; align-items: flex-start; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); cursor: pointer; }
+.task input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.task .lz { flex: none; width: 30px; height: 19px; border: 2.5px solid var(--c); border-radius: 50%; margin-top: 4px; transition: background .2s; }
+.task input:checked + .lz { background: var(--c); }
+.task input:focus-visible + .lz { outline: 3px solid var(--accent); outline-offset: 2px; }
+.task input:checked ~ .tx { color: var(--muted); }
+.task .tx { min-width: 0; }
+.exercise { margin: 8px 0 4px 0; border-radius: 12px; padding: 14px; background: var(--cs); }
+.exercise h4 { font-size: 1.05rem; margin-bottom: 8px; text-transform: uppercase; }
+.qrow { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; padding: 7px 0; border-top: 1px solid color-mix(in srgb, var(--c) 25%, transparent); font-size: .98rem; }
+.qrow:first-of-type { border-top: 0; }
+.qrow .qn { font: 700 .8rem var(--font-mono); color: var(--muted); width: 2.2em; align-self: flex-start; padding-top: 4px; }
+.qrow .qt { min-width: 0; flex: 1 1 18rem; }
+.qrow .qb { flex: 1 1 18rem; display: grid; gap: 4px; min-width: 0; }
+.qrow .es-q i { font: 800 .65rem var(--font-mono); font-style: normal; background: var(--c); color: var(--on-c); padding: 2px 6px; border-radius: 4px; margin-right: 6px; }
+.qrow input { font: inherit; width: 11rem; max-width: 100%; padding: 4px 9px; border: 2px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); }
+.qrow.tr input { width: 100%; }
+.qrow input.ok { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, var(--surface)); }
+.qrow input.bad { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 12%, var(--surface)); }
+.exbar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: 12px; }
+.exbar button { border: 2px solid var(--c); background: var(--surface); border-radius: 999px; padding: 7px 16px; font-weight: 700; }
+.exbar button.main { background: var(--c); color: var(--on-c); }
+.exbar.top { margin: 6px 0 12px; }
+.score { font-weight: 800; font-variant-numeric: tabular-nums; }
+.hint { font-size: .88rem; color: var(--muted); margin: 8px 0 0; }
+
+@media (max-width: 880px) {
+  .split { grid-template-columns: minmax(0, 1fr); }
+  .split > .toc { display: none; }
+  .mtoc { display: block; }
+  .hero-in { grid-template-columns: minmax(0, 1fr); }
+  .part { grid-template-columns: minmax(0, 1fr); }
+  .part .pn { grid-row: auto; width: 56px; height: 56px; }
+  ol.freq li { grid-template-columns: 1.6em 8.5rem minmax(0, 1fr) auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+</style>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#home"><b>PET</b> B1 <small>Cambridge</small></a>
+  <nav class="nav" aria-label="Main">
+    <a href="#theory" data-sec="theory">Theory</a>
+    <a href="#exams" data-sec="exams">Exams</a>
+    <a href="#lessons" data-sec="lessons">Lessons</a>
+  </nav>
+</div></header>
+<main id="app"></main>
+<script>
+/* ---------- helpers ---------- */
+const E = (en, es) => `<div class="ex"><span class="en">${en}</span><span class="es">${es}</span></div>`;
+const EX = (...p) => `<div class="exs">${p.map(x => E(x[0], x[1])).join('')}</div>`;
+const T = (head, rows) => `<div class="tw"><table><thead><tr>${head.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const F = t => `<p class="formula">${t}</p>`;
+const NOTE = (t, ex) => `<aside class="note">${t}</aside>${ex ? EX(...ex) : ''}`;
+const H = t => `<h3>${t}</h3>`;
+const P = t => `<p>${t}</p>`;
+const LEAD = t => `<p class="lead">${t}</p>`;
+const UL = (...i) => `<ul>${i.map(x => `<li>${x}</li>`).join('')}</ul>`;
+const OL = (...i) => `<ol>${i.map(x => `<li>${x}</li>`).join('')}</ol>`;
+const CH = (...i) => `<p class="chips">${i.map(x => `<span>${x}</span>`).join('')}</p>`;
+const HL = t => `<span class="hl">${t}</span>`;
+/* ordered list of uses, each with an example: USES([use, en, es], ...) */
+const USES = (...u) => `<ol class="uses">${u.map(x => `<li><b>${x[0]}</b>${E(x[1], x[2])}</li>`).join('')}</ol>`;
+/* ordered list of frequency adverbs (always the same order, from most to least frequent) */
+const FREQ_ALL = [
+  ['always', '100%'], ['constantly / continually', '≈100% (often a complaint)'], ['usually', '90%'], ['normally / generally', '80%'],
+  ['often / frequently', '70%'], ['sometimes', '50%'], ['occasionally', '30%'], ['rarely / seldom', '10%'], ['hardly ever', '5%'], ['never', '0%']
+];
+const FQ = (keep, en, es, extra) => {
+  const rows = FREQ_ALL.filter(r => keep === 'all' || keep.includes(r[0].split(' ')[0]));
+  return H('Frequency adverbs, from most to least frequent') +
+    `<ol class="freq">${rows.map(r => `<li><b>${r[0]}</b><i style="--p:${parseInt(r[1].replace('≈',''))}"></i><span>${r[1].replace(' (often a complaint)','')}</span></li>`).join('')}</ol>` +
+    (en ? EX([en, es]) : '') + (extra || '');
+};
+const TIMES = (...i) => H('Time expressions and signal words') + CH(...i);
+
+const GROUPS = [];
+/* ---------- BASICS ---------- */
+GROUPS.push({ id: 'basics', name: 'Grammar basics', hue: 'blue', topics: [
+{ id: 'saxon-genitive', title: 'Saxon genitive', sub: "Showing who something belongs to: 's",
+  task: "Write 6 sentences with the Saxon genitive: one with a plural owner ending in -s, one with two owners sharing something and one where each owner has their own thing.",
+  html:
+LEAD('We use the Saxon genitive to show that something belongs to someone. The owner must be a <b>living being</b>: a person or an animal.') +
+H('Basic form') +
+P(`Add ${HL("'s")} to the owner and then write the thing owned. The order is the opposite of Spanish.`) +
+F("owner + 's + thing owned") +
+EX(["Paul's table", 'La mesa de Paul'], ["My sister's dog", 'El perro de mi hermana']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Plural owner ending in -s', "Add only the apostrophe (')", "My bosses' car (El coche de mis jefes)"],
+  ['Irregular plural not ending in -s', "Add 's as normal", "The children's toys (Los juguetes de los niños)"],
+  ['Singular name ending in -s', "Both 's and ' are correct", "James's car / James' car (El coche de James)"],
+  ['Two owners, one shared thing', "Add 's only to the last owner", "Susan and Peter's car (El coche de Susan y Peter, compartido)"],
+  ['Two owners, each with their own thing', "Add 's to each owner", "Susan's and Peter's cars (Los coches de Susan y de Peter)"],
+  ['Places and shops', "'s without the noun", "We met at Tom's. / I'm going to the baker's. (Quedamos en casa de Tom. / Voy a la panadería.)"],
+  ['Time expressions', "'s is also correct", "Today's newspaper / a week's holiday (El periódico de hoy / una semana de vacaciones)"]]) +
+H('Things (non-living owners)') +
+P('With objects we do not use the Saxon genitive. We use <b>of</b> or a compound noun.') +
+EX(['The leg of the table', 'La pata de la mesa'], ['The car door', 'La puerta del coche'])
+},
+{ id: 'personal-pronouns', title: 'Personal pronouns', sub: 'Subject, object, possessive and reflexive forms',
+  task: 'Write all five forms of the pronouns from memory in a table. Then write one sentence with each form for the person "she".',
+  html:
+LEAD('Personal pronouns replace nouns. Their form changes according to the function they have in the sentence.') +
+T(['Subject', 'Object', 'Possessive adjective', 'Possessive pronoun', 'Reflexive'], [
+  ['I', 'me', 'my', 'mine', 'myself'],
+  ['you', 'you', 'your', 'yours', 'yourself'],
+  ['he', 'him', 'his', 'his', 'himself'],
+  ['she', 'her', 'her', 'hers', 'herself'],
+  ['it', 'it', 'its', '—', 'itself'],
+  ['we', 'us', 'our', 'ours', 'ourselves'],
+  ['you', 'you', 'your', 'yours', 'yourselves'],
+  ['they', 'them', 'their', 'theirs', 'themselves']]) +
+H('Subject pronouns') +
+P('They go before the verb. In English the subject is always necessary, even with weather and time.') +
+EX(['She lives in Valencia.', 'Vive en Valencia.'], ['It is raining.', 'Está lloviendo.']) +
+H('Object pronouns') +
+P('They go after a verb or a preposition.') +
+EX(['Can you help me?', '¿Puedes ayudarme?'], ['I saw them at the cinema.', 'Los vi en el cine.'], ['This present is for you.', 'Este regalo es para ti.']) +
+H('Possessive adjectives and possessive pronouns') +
+P('A possessive <b>adjective</b> goes before a noun. A possessive <b>pronoun</b> replaces the noun and is never followed by one.') +
+EX(['This is my bag.', 'Este es mi bolso.'], ['This bag is mine.', 'Este bolso es mío.'], ['Their house is bigger than ours.', 'Su casa es más grande que la nuestra.']) +
+H('Reflexive pronouns') +
+P('We use them when the subject and the object are the same person, and to emphasise (&ldquo;by myself&rdquo;).') +
+EX(['He cut himself with a knife.', 'Se cortó con un cuchillo.'], ['I made this cake myself.', 'Hice esta tarta yo mismo.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Explanation', 'Example'], [
+  ['its / it\'s', 'its = possessive (no apostrophe); it\'s = it is / it has', "The dog wagged its tail. It's happy. (El perro movió la cola. Está contento.)"],
+  ['you', 'Same form for singular and plural', "You are my best friend. / You are all welcome. (Eres mi mejor amigo. / Sois todos bienvenidos.)"],
+  ['Possessives with body parts', 'English uses the possessive adjective, not the article', "She washed her hands. (Se lavó las manos.)"],
+  ['a friend of mine', 'of + possessive pronoun, never "of my"', "He is a friend of mine. (Es amigo mío.)"],
+  ['Reflexive vs object', 'Same person = reflexive; different person = object', "He hurt himself. / He hurt him. (Se hizo daño. / Le hizo daño a él.)"]])
+},
+{ id: 'a-an', title: 'A / AN', sub: 'Indefinite articles',
+  task: 'Write 10 nouns with the correct article (a / an). Include at least two words with a silent h and two with a /j/ sound.',
+  html:
+LEAD('<b>A</b> and <b>an</b> mean &ldquo;one&rdquo;. We only use them with <b>singular countable nouns</b>.') +
+T(['We use', 'When the word starts with', 'Examples'], [
+  ['<b>a</b>', 'a consonant sound', 'a book, a dog, a teacher'],
+  ['<b>an</b>', 'a vowel sound', 'an apple, an egg, an idea']]) +
+H('It is the sound, not the letter') +
+T(['Word', 'Initial sound', 'Article'], [
+  ['horse', '/h/ is pronounced (consonant)', 'a horse'],
+  ['hour', '/h/ is silent: starts with a vowel sound', 'an hour'],
+  ['honest', '/h/ is silent', 'an honest man'],
+  ['uniform', '/j/ (&ldquo;yu&rdquo;) sounds like a consonant', 'a uniform'],
+  ['university', '/j/', 'a university'],
+  ['European country', '/j/', 'a European country'],
+  ['umbrella', '/ʌ/ is a vowel sound', 'an umbrella'],
+  ['one-day trip', '/w/', 'a one-day trip']]) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Letters read as a name', 'Use the sound of the letter name', 'an MP (/em/), an FBI agent (/ef/), a UFO (/juː/)'],
+  ['Adjective before the noun', 'The sound of the adjective decides', 'a big apple, an old house'],
+  ['Jobs', 'Use a / an with professions', 'She is a doctor. (Es médica.)'],
+  ['Frequency and speed', 'a / an = per', 'twice a week (dos veces por semana), 60 km an hour (60 km por hora)'],
+  ['Plural and uncountable nouns', 'No a / an: use some or nothing', 'I need some water. / I like books. (Necesito agua. / Me gustan los libros.)']])
+},
+{ id: 'quantifiers', title: 'Quantifiers', sub: 'the, some, any, a lot of, many, much',
+  task: 'Write one affirmative sentence, one negative sentence and one question with each of these: some/any, many, much, a lot of. Then write 2 questions with How many and 2 with How much.',
+  html:
+LEAD('Quantifiers tell us <b>how much</b> or <b>how many</b>. First we need to know if the noun is <b>countable</b> (apple, apples) or <b>uncountable</b> (water, money, information).') +
+H('The') +
+P(`${HL('The')} means &ldquo;that specific thing&rdquo;: we already know which one, or there is only one.`) +
+EX(['Open the window, please.', 'Abre la ventana, por favor.'], ['The sun is hot today.', 'El sol está fuerte hoy.']) +
+H('Some and any') +
+T(['', 'Use', 'Example'], [
+  ['<b>some</b>', 'Affirmative sentences', 'There are some apples on the table. (Hay unas manzanas en la mesa.)'],
+  ['<b>any</b>', 'Negative sentences and questions', "We haven't got any milk. / Is there any sugar? (No tenemos leche. / ¿Hay azúcar?)"]]) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Offers and requests', 'Use <b>some</b> in questions when we expect &ldquo;yes&rdquo;', 'Would you like some tea? (¿Te apetece un té?)'],
+  ['<b>any</b> in affirmative sentences', 'Means &ldquo;it does not matter which&rdquo;', 'You can take any book. (Puedes coger cualquier libro.)'],
+  ['<b>any</b> after a negative word', 'Hardly, never, without also take any', 'He never has any money. (Nunca tiene dinero.)']]) +
+H('A lot of / lots of') +
+P('They mean &ldquo;a large quantity&rdquo;. They work with <b>countable and uncountable</b> nouns, mainly in affirmative sentences.') +
+EX(['She has a lot of friends.', 'Tiene muchos amigos.'], ['We have lots of homework.', 'Tenemos muchos deberes.']) +
+H('Many and much') +
+T(['', 'Used with', 'Used in', 'Example'], [
+  ['<b>many</b>', 'Countable (plural)', 'Negatives and questions', "There aren't many cars. / Are there many people? (No hay muchos coches. / ¿Hay mucha gente?)"],
+  ['<b>much</b>', 'Uncountable', 'Negatives and questions', "I don't have much time. / Is there much traffic? (No tengo mucho tiempo. / ¿Hay mucho tráfico?)"]]) +
+NOTE('<b>Exception:</b> in affirmative sentences <i>much</i> is only normal after <i>so, too, as</i> and <i>very</i>. Otherwise use <i>a lot of</i>.', [['She has so much energy.', 'Tiene muchísima energía.'], ['I have a lot of time.', 'Tengo mucho tiempo. (not: I have much time)']]) +
+H('How many…? and How much…?') +
+T(['', 'We ask about', 'Example'], [
+  ['<b>How many…?</b>', 'Countable things', 'How many brothers have you got? (¿Cuántos hermanos tienes?)'],
+  ['<b>How much…?</b>', 'Uncountable things and prices', 'How much water do you drink? / How much is this shirt? (¿Cuánta agua bebes? / ¿Cuánto cuesta esta camisa?)']])
+},
+{ id: 'there-is-are', title: 'There is / There are', sub: 'Saying that something exists (present)',
+  task: 'Describe your bedroom with 6 sentences with there is / there are: two affirmative, two negative and two questions with their short answers.',
+  html:
+LEAD(`${HL('There is / There are')} say that something <b>exists or is in a place</b>. We use <i>is</i> with singular and uncountable nouns and <i>are</i> with plural nouns.`) +
+T(['', 'Singular countable', 'Uncountable', 'Plural countable'], [
+  ['<b>Affirmative</b>', 'There is a book on the desk.', 'There is some milk in the fridge.', 'There are some books on the desk.'],
+  ['<b>Negative</b>', "There isn't a book.", "There isn't any milk.", "There aren't any books."],
+  ['<b>Question</b>', 'Is there a book?', 'Is there any milk?', 'Are there any books?'],
+  ['<b>Short answers</b>', "Yes, there is. / No, there isn't.", "Yes, there is. / No, there isn't.", "Yes, there are. / No, there aren't."]]) +
+EX(['There is a park near my house.', 'Hay un parque cerca de mi casa.'], ["There aren't any shops here.", 'No hay tiendas aquí.'], ['Is there any water?', '¿Hay agua?']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Contraction', "There is → there's. There are has no contraction.", "There's a cat. / There are two cats. (Hay un gato. / Hay dos gatos.)"],
+  ['Several things in a list', 'The verb agrees with the first noun', 'There is a pen and two books on the desk. (Hay un bolígrafo y dos libros en el escritorio.)'],
+  ['Spoken English', "There's is often used before plurals", "There's three people waiting. (Hay tres personas esperando.)"],
+  ['Not the same as "it is"', 'There is = exists. It is = identifies.', "There is a bus. It is red. (Hay un autobús. Es rojo.)"]])
+},
+{ id: 'there-was-were', title: 'There was / There were', sub: 'Saying that something existed (past)',
+  task: 'Describe your primary school or your old neighbourhood with 6 sentences with there was / there were: two affirmative, two negative and two questions with short answers.',
+  html:
+LEAD('<b>There was / There were</b> is the past of <i>there is / there are</i>. We use <i>was</i> with singular and uncountable nouns and <i>were</i> with plural nouns.') +
+T(['', 'Singular countable', 'Uncountable', 'Plural countable'], [
+  ['<b>Affirmative</b>', 'There was a dog in the garden.', 'There was some milk in the fridge.', 'There were some dogs in the garden.'],
+  ['<b>Negative</b>', "There wasn't a dog.", "There wasn't any milk.", "There weren't any dogs."],
+  ['<b>Question</b>', 'Was there a dog?', 'Was there any milk?', 'Were there any dogs?'],
+  ['<b>Short answers</b>', "Yes, there was. / No, there wasn't.", "Yes, there was. / No, there wasn't.", "Yes, there were. / No, there weren't."]]) +
+EX(['There was a big storm last night.', 'Anoche hubo una gran tormenta.'], ["There weren't any tickets left.", 'No quedaban entradas.'], ['Was there any bread?', '¿Había pan?']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['No auxiliary <i>did</i>', 'Questions and negatives use was / were, never did', "Was there a party? (not: Did there be…) (¿Hubo una fiesta?)"],
+  ['Used to', 'There used to be = there was in the past, but not now', 'There used to be a cinema here. (Antes había un cine aquí.)'],
+  ['Mixed list', 'The verb agrees with the first noun', 'There was a table and two chairs. (Había una mesa y dos sillas.)']])
+},
+{ id: 'demonstratives', title: 'Demonstratives', sub: 'this, that, these, those',
+  task: 'Look around you and write 6 sentences: three with this/these (near) and three with that/those (far).',
+  html:
+LEAD('Demonstratives point to something. They show <b>distance</b> from the speaker and <b>number</b>.') +
+T(['', 'Near', 'Far'], [
+  ['<b>Singular</b>', 'this (este / esta / esto)', 'that (ese / esa / eso, aquel / aquella / aquello)'],
+  ['<b>Plural</b>', 'these (estos / estas)', 'those (esos / esas, aquellos / aquellas)']]) +
+EX(['This pen is mine.', 'Este bolígrafo es mío.'], ['That house is very old.', 'Esa casa es muy vieja.'], ['These shoes are comfortable.', 'Estos zapatos son cómodos.'], ['Those mountains are beautiful.', 'Aquellas montañas son preciosas.']) +
+H('As pronouns') +
+EX(['What is that?', '¿Qué es eso?'], ['Are these your keys?', '¿Son estas tus llaves?']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Time expressions', 'this = present; that = past or finished', 'I am busy this week. / That was a great weekend. (Esta semana estoy ocupado. / Aquello fue un gran fin de semana.)'],
+  ['On the phone', 'this = me, that = you', 'Hello, this is Anna. Who is that? (Hola, soy Anna. ¿Quién es?)'],
+  ['Emotional distance', 'that can show we do not like something near us', "I don't like that noise. (No me gusta ese ruido.)"],
+  ['Pairs of objects', 'These / those with trousers, jeans, glasses', 'Those jeans are too long. (Esos vaqueros son demasiado largos.)']])
+},
+{ id: 'plurals', title: 'Singular and plural', sub: 'Regular and irregular plural nouns',
+  task: 'Write the plural of 20 nouns, at least 8 of them irregular. Then use 5 of them in sentences.',
+  html:
+LEAD('Most nouns form the plural with a few simple rules. Irregular plurals must be memorised.') +
+H('Regular rules') +
+T(['Rule', 'Examples'], [
+  ['Most nouns: add <b>-s</b>', 'book → books, car → cars, day → days'],
+  ['Adjectives have <b>no plural form</b>', 'a red car → two red cars (not &ldquo;reds&rdquo;)'],
+  ['Nouns ending in <b>-f / -fe</b> change to <b>-ves</b>', 'knife → knives, leaf → leaves, wife → wives, wolf → wolves'],
+  ['<b>Consonant + y</b> → <b>-ies</b>. Vowel + y → just -s', 'city → cities, baby → babies; boy → boys, day → days'],
+  ['Nouns ending in <b>-s, -sh, -ch, -x, -o</b>: add <b>-es</b>', 'bus → buses, dish → dishes, watch → watches, box → boxes, potato → potatoes']]) +
+H('Exceptions to the regular rules') +
+T(['Exception', 'Examples'], [
+  ['Some -f nouns just add -s', 'roof → roofs, cliff → cliffs, belief → beliefs, chief → chiefs'],
+  ['Some -o nouns just add -s (short or foreign words)', 'photo → photos, piano → pianos, video → videos, kilo → kilos'],
+  ['Both forms are possible', 'tomato → tomatoes, hero → heroes, volcano → volcanoes / volcanos']]) +
+H('Irregular plurals') +
+T(['Singular', 'Plural', 'Spanish'], [
+  ['man', 'men', 'hombre'], ['woman', 'women', 'mujer'], ['child', 'children', 'niño'], ['person', 'people', 'persona'],
+  ['foot', 'feet', 'pie'], ['tooth', 'teeth', 'diente'], ['mouse', 'mice', 'ratón'], ['goose', 'geese', 'ganso'],
+  ['ox', 'oxen', 'buey'], ['louse', 'lice', 'piojo'], ['life', 'lives', 'vida'], ['half', 'halves', 'mitad']]) +
+H('Same form in singular and plural') +
+CH('sheep', 'fish', 'deer', 'series', 'species', 'aircraft', 'means') +
+EX(['I saw two sheep and a fish.', 'Vi dos ovejas y un pez.'], ['This species is in danger.', 'Esta especie está en peligro.']) +
+H('Greek and Latin plurals') +
+T(['Singular', 'Plural'], [
+  ['crisis', 'crises'], ['analysis', 'analyses'], ['phenomenon', 'phenomena'], ['criterion', 'criteria'],
+  ['cactus', 'cacti'], ['bacterium', 'bacteria'], ['nucleus', 'nuclei'], ['thesis', 'theses']]) +
+H('Always plural') +
+P('Objects with two parts and other words that take a plural verb:') +
+CH('trousers', 'jeans', 'scissors', 'glasses', 'shorts', 'clothes', 'police', 'people') +
+EX(['My trousers are new.', 'Mis pantalones son nuevos.'], ['The police are here.', 'La policía está aquí.']) +
+NOTE('To count these objects we use <b>a pair of</b>:', [['I bought two pairs of jeans.', 'Compré dos pantalones vaqueros.']])
+}
+]});
+
+/* ---------- COMPARISON ---------- */
+GROUPS.push({ id: 'comparison', name: 'Comparison', hue: 'teal', topics: [
+{ id: 'comparative', title: 'Comparative', sub: 'Equality, inferiority and superiority',
+  task: 'Compare three people or things around you with 8 sentences: two of equality, two of inferiority and four of superiority (two with -er and two with more).',
+  html:
+LEAD('The comparative compares two people or things. There are three types.') +
+H('Equality (as… as)') +
+F('as + adjective + as') +
+EX(["You aren't as tall as Mary.", 'No eres tan alto como Mary.'], ['My phone is as expensive as yours.', 'Mi móvil es tan caro como el tuyo.']) +
+H('Inferiority (less… than)') +
+F('less + adjective + than') +
+EX(['You are less tall than Mary.', 'Eres menos alto que Mary.'], ['This film is less interesting than the book.', 'Esta película es menos interesante que el libro.']) +
+NOTE('With short adjectives <i>not as … as</i> sounds more natural than <i>less … than</i>.', [["You aren't as tall as Mary.", 'No eres tan alto como Mary.']]) +
+H('Superiority (more… than)') +
+T(['Adjective', 'Rule', 'Example'], [
+  ['1 syllable (and some with 2)', 'adjective + <b>-er</b> + than', 'tall → You are taller than Mary. (Eres más alto que Mary.)'],
+  ['More than 2 syllables', '<b>more</b> + adjective + than', 'intelligent → You are more intelligent than Mary. (Eres más inteligente que Mary.)']]) +
+H('Spelling rules (and exceptions)') +
+T(['Rule', 'Adjective', 'Comparative'], [
+  ['Normal: add -er', 'tall, cold, fast', 'taller, colder, faster'],
+  ['Ends in -e: add only -r', 'nice, large, safe', 'nicer, larger, safer'],
+  ['Consonant-vowel-consonant: double the consonant', 'big, hot, thin', 'bigger, hotter, thinner'],
+  ['Consonant + y: y changes to -ier', 'happy, easy, busy', 'happier, easier, busier'],
+  ['Two syllables ending in -er, -le, -ow: both forms are possible', 'clever, simple, narrow', 'cleverer / more clever, simpler / more simple, narrower / more narrow'],
+  ['Exception: no doubling when the word ends in w, x or y', 'new, grey, low', 'newer, greyer, lower']]) +
+EX(['This bag is heavier than that one.', 'Este bolso es más pesado que ese.'], ['The test was easier than I thought.', 'El examen fue más fácil de lo que pensaba.']) +
+H('Making a comparison stronger or weaker') +
+P('We can use <b>much, a lot, far, a bit, slightly</b> before the comparative.') +
+EX(['Today is much colder than yesterday.', 'Hoy hace mucho más frío que ayer.'], ['She is a bit taller than me.', 'Ella es un poco más alta que yo.']) +
+H('The… the…') +
+EX(['The more you practise, the better you speak.', 'Cuanto más practicas, mejor hablas.'])
+},
+{ id: 'superlative', title: 'Superlative', sub: 'The most… / the least…',
+  task: 'Write 8 sentences with the superlative about your city, your family and your hobbies. Include 3 with -est, 3 with the most and 2 with the least.',
+  html:
+LEAD('The superlative shows the highest or the lowest degree in a group. It always takes <b>the</b>.') +
+H('Inferiority (the least…)') +
+F('the least + adjective') +
+EX(['You are the least tall.', 'Eres el menos alto.'], ['This is the least expensive hotel.', 'Este es el hotel menos caro.']) +
+H('Superiority (the most…)') +
+T(['Adjective', 'Rule', 'Example'], [
+  ['1 syllable (and some with 2)', 'the + adjective + <b>-est</b>', 'cold → Today is the coldest day of the year. (Hoy es el día más frío del año.)'],
+  ['More than 2 syllables', 'the <b>most</b> + adjective', 'expensive → This is the most expensive watch in the store. (Este es el reloj más caro de la tienda.)']]) +
+H('Spelling rules (and exceptions)') +
+T(['Rule', 'Adjective', 'Superlative'], [
+  ['Normal: add -est', 'tall, cold, fast', 'the tallest, the coldest, the fastest'],
+  ['Ends in -e: add only -st', 'nice, large, safe', 'the nicest, the largest, the safest'],
+  ['Consonant-vowel-consonant: double the consonant', 'big, hot, thin', 'the biggest, the hottest, the thinnest'],
+  ['Consonant + y: y changes to -iest', 'happy, easy, busy', 'the happiest, the easiest, the busiest'],
+  ['Two syllables ending in -er, -le, -ow: both forms are possible', 'clever, simple, narrow', 'the cleverest / the most clever, the simplest, the narrowest']]) +
+H('In and of') +
+P('After a superlative we use <b>in</b> + a place or group, and <b>of</b> + a whole or a period of time.') +
+EX(['She is the fastest runner in the school.', 'Es la corredora más rápida del colegio.'], ['It was the best day of my life.', 'Fue el mejor día de mi vida.']) +
+H('With the present perfect') +
+P('Very common in the exam: <i>the + superlative + (that) + I have ever + past participle</i>.') +
+EX(["It's the most interesting book I've ever read.", 'Es el libro más interesante que he leído nunca.']) +
+NOTE('<b>Exception:</b> the <i>the</i> can be left out after a possessive or when the superlative is used as an adverb.', [['She is my best friend.', 'Es mi mejor amiga.'], ['Who runs fastest?', '¿Quién corre más rápido?']])
+},
+{ id: 'irregular-adjectives', title: 'Irregular adjectives', sub: 'good, bad, far, little…',
+  task: 'Write one sentence with the comparative and one with the superlative of each irregular adjective in the table (at least 8 sentences).',
+  html:
+LEAD('Some very common adjectives do not follow the -er / -est or more / most rules. We must memorise them.') +
+T(['Irregular adjective', 'Comparative', 'Superlative'], [
+  ['good (bueno/a)', 'better', 'the best'],
+  ['bad (malo/a)', 'worse', 'the worst'],
+  ['far (lejano/a)', 'farther / further', 'the farthest / the furthest'],
+  ['little (poco/a)', 'less', 'the least'],
+  ['much / many (mucho/a)', 'more', 'the most'],
+  ['old (viejo/a)', 'older / elder', 'the oldest / the eldest']]) +
+EX(['This pizza is better than the other one.', 'Esta pizza es mejor que la otra.'], ['It was the worst film of the year.', 'Fue la peor película del año.'], ['I have less time than you.', 'Tengo menos tiempo que tú.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['elder / eldest', 'Only for family members, and before a noun (not with than)', 'My elder sister is a nurse. (Mi hermana mayor es enfermera.)'],
+  ['farther / further', 'farther = distance; further = distance or &ldquo;more&rdquo;', 'Let me know if you need further information. (Avísame si necesitas más información.)'],
+  ['less / fewer', 'less + uncountable; fewer + countable', 'less money, fewer problems (menos dinero, menos problemas)']])
+},
+{ id: 'too-enough', title: 'Too and (not) enough', sub: 'Too much and not as much as we need',
+  task: 'Describe your home, your phone, your ideal salary and today\'s weather with 8 sentences using too or enough. Add to + verb in 3 of them.',
+  html:
+LEAD('<b>Too</b> means &ldquo;more than is good&rdquo; (a problem). <b>Enough</b> means &ldquo;the amount we need&rdquo;.') +
+H('Too') +
+T(['Structure', 'Example'], [
+  ['too + adjective / adverb', "It's too cold. (Hace demasiado frío.)"],
+  ['too much + uncountable noun', 'There is too much noise. (Hay demasiado ruido.)'],
+  ['too many + plural noun', 'There are too many people. (Hay demasiada gente.)'],
+  ['too + adjective + <b>to</b> + verb', 'He is too young to drive. (Es demasiado joven para conducir.)']]) +
+H('Enough') +
+T(['Structure', 'Example'], [
+  ['adjective / adverb + <b>enough</b>', 'She is old enough to vote. (Tiene edad suficiente para votar.)'],
+  ['<b>enough</b> + noun', 'We have enough chairs. (Tenemos sillas suficientes.)'],
+  ['<b>not</b> + adjective + enough', "It's not warm enough. (No hace suficiente calor.)"],
+  ['<b>not enough</b> + noun', "I don't have enough money. (No tengo dinero suficiente.)"]]) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Word order', '<i>enough</i> goes AFTER an adjective but BEFORE a noun', 'big enough / enough money (lo bastante grande / dinero suficiente)'],
+  ['Too ≠ very', '<i>very</i> is just intensity; <i>too</i> is a problem', "It's very hot, but I like it. / It's too hot, I can't stay. (Hace mucho calor, pero me gusta. / Hace demasiado calor, no puedo quedarme.)"],
+  ['Too = also', 'At the end of a sentence <i>too</i> means &ldquo;also&rdquo;', 'I like pizza too. (A mí también me gusta la pizza.)'],
+  ['Same meaning, two structures', 'too + adj = not + opposite adj + enough', "The bag is too heavy to carry. / The bag isn't light enough to carry. (La bolsa pesa demasiado para llevarla.)"]])
+}
+]});
+/* ---------- VERB TENSES ---------- */
+const SIMPLE_FORM = (a, n, q, s) => T(['', 'Example'], [['<b>Affirmative</b>', a], ['<b>Negative</b>', n], ['<b>Question</b>', q], ['<b>Short answers</b>', s]]);
+
+GROUPS.push({ id: 'tenses', name: 'Verb tenses', hue: 'violet', topics: [
+
+/* ===== PRESENT ===== */
+{ id: 'present-simple', sec: 'Present', hue: 'violet', title: 'Present simple', sub: 'Habits, routines and facts',
+  task: "Write 8 sentences about your weekly routine and a friend's routine (use he / she). Include 2 negatives and 2 questions with short answers.",
+  html:
+LEAD('The present simple is the tense for things that are <b>always true</b>, <b>repeated</b> or <b>permanent</b>.') +
+H('Form') +
+T(['', 'I / you / we / they', 'he / she / it'], [
+  ['<b>Affirmative</b>', 'I work', 'She works'],
+  ['<b>Negative</b>', "I don't work", "She doesn't work"],
+  ['<b>Question</b>', 'Do you work?', 'Does she work?'],
+  ['<b>Short answers</b>', "Yes, I do. / No, I don't.", "Yes, she does. / No, she doesn't."]]) +
+NOTE('After <i>does / doesn\'t</i> the verb has <b>no -s</b>.', [["Does she work here? (not: Does she works)", '¿Trabaja ella aquí?']]) +
+H('Uses') +
+USES(
+  ['Habits and routines', 'I get up at seven every day.', 'Me levanto a las siete todos los días.'],
+  ['Permanent situations and states', 'My father works in a bank.', 'Mi padre trabaja en un banco.'],
+  ['General truths and scientific facts', 'Water boils at 100 degrees.', 'El agua hierve a 100 grados.'],
+  ['Timetables and schedules (fixed future)', 'The train leaves at 9.15.', 'El tren sale a las 9.15.'],
+  ['Instructions and directions', 'You turn left and then you go straight on.', 'Giras a la izquierda y luego sigues recto.'],
+  ['After when, if, as soon as, before, after (future meaning)', "I'll call you when I arrive.", 'Te llamaré cuando llegue.']) +
+H('Third person spelling (he / she / it)') +
+T(['Rule', 'Examples'], [
+  ['Most verbs: add <b>-s</b>', 'work → works (She works hard. Trabaja mucho.)'],
+  ['Verbs ending in -s, -sh, -ch, -x, -z, -o: add <b>-es</b>', 'watch → watches (He watches TV. Ve la tele.), go → goes, do → does'],
+  ['Consonant + y → <b>-ies</b>', 'study → studies (She studies law. Estudia derecho.)'],
+  ['Vowel + y: just add -s', 'play → plays (He plays tennis. Juega al tenis.)'],
+  ['<b>have</b> is irregular', 'have → has (She has a dog. Tiene un perro.)']]) +
+FQ('all', 'She usually walks to work.', 'Normalmente va andando al trabajo.',
+  NOTE('<b>Position:</b> frequency adverbs go <b>before</b> the main verb but <b>after</b> the verb <i>to be</i> and between an auxiliary and the main verb. <i>Sometimes, usually, often</i> and <i>normally</i> can also go at the beginning or the end. <i>Always</i> and <i>never</i> cannot.', [['He often sleeps late.', 'A menudo duerme hasta tarde.'], ['She is often late.', 'A menudo llega tarde.'], ['Sometimes I walk home. / I walk home sometimes.', 'A veces vuelvo a casa andando.'], ["I don't often eat meat.", 'No como carne a menudo.']])) +
+TIMES('every day', 'every week', 'on Mondays', 'at weekends', 'in the morning', 'once a week', 'twice a year', 'How often…?')
+},
+{ id: 'present-continuous', sec: 'Present', hue: 'violet', title: 'Present continuous', sub: 'Actions happening now',
+  task: 'Describe what 5 people around you are doing right now and 3 temporary projects in your life these days. Include 2 negatives and 2 questions.',
+  html:
+LEAD('The present continuous describes actions <b>in progress now</b>, <b>temporary</b> situations and <b>changing</b> situations.') +
+H('Form') +
+F('am / is / are + verb-ing') +
+T(['', 'Example'], [
+  ['<b>Affirmative</b>', "I'm studying. / She is reading. / They are playing."],
+  ['<b>Negative</b>', "I'm not studying. / He isn't reading. / We aren't playing."],
+  ['<b>Question</b>', 'Are you studying? / Is she reading? / What are they doing?'],
+  ['<b>Short answers</b>', "Yes, I am. / No, she isn't. / Yes, they are."]]) +
+H('Uses') +
+USES(
+  ['Actions happening at the moment of speaking', 'Look! It is snowing.', '¡Mira! Está nevando.'],
+  ['Temporary situations around now', "I'm living with my aunt this month.", 'Este mes estoy viviendo con mi tía.'],
+  ['Changing and developing situations', 'Prices are going up.', 'Los precios están subiendo.'],
+  ['Annoying habits (with always, constantly)', "You're always losing your keys!", '¡Siempre estás perdiendo las llaves!'],
+  ['Fixed arrangements in the future', "I'm meeting Anna at six tomorrow.", 'Mañana quedo con Anna a las seis.']) +
+H('Spelling of -ing') +
+T(['Rule', 'Examples'], [
+  ['Normal: add <b>-ing</b>', 'work → working (He is working. Está trabajando.)'],
+  ['Ends in -e: drop the e', 'make → making, write → writing (She is writing. Está escribiendo.)'],
+  ['Consonant-vowel-consonant: double the consonant', 'run → running, sit → sitting (They are running. Están corriendo.)'],
+  ['Ends in -ie: change to -ying', 'lie → lying, die → dying'],
+  ['Exceptions: no doubling if the last syllable is not stressed, or the word ends in w, x, y', 'visit → visiting, open → opening, play → playing, fix → fixing']]) +
+FQ(['always', 'constantly'], "He is always complaining about the food!", '¡Siempre se está quejando de la comida!',
+  NOTE('With the present continuous, frequency adverbs express <b>irritation</b>. For neutral habits use the present simple.', [['She always forgets her keys. (neutral)', 'Siempre olvida las llaves.'], ['She is always forgetting her keys! (annoyed)', '¡Siempre se está olvidando las llaves!']])) +
+TIMES('now', 'right now', 'at the moment', 'today', 'these days', 'this week', 'currently', 'Look!', 'Listen!')
+},
+{ id: 'present-perfect', sec: 'Present', hue: 'violet', title: 'Present perfect', sub: 'The past with a link to now',
+  task: 'Write 8 sentences about your experiences (ever / never), what you have just / already done, and how long you have known 2 people (for / since). Add 2 questions with short answers.',
+  html:
+LEAD('The present perfect connects the <b>past with the present</b>: the exact time of the action is not important, or the time period is not finished.') +
+H('Form') +
+F('have / has + past participle') +
+T(['', 'Example'], [
+  ['<b>Affirmative</b>', "I have seen it. / She has finished."],
+  ['<b>Negative</b>', "I haven't seen it. / She hasn't finished."],
+  ['<b>Question</b>', 'Have you seen it? / Has she finished?'],
+  ['<b>Short answers</b>', "Yes, I have. / No, she hasn't."]]) +
+P('Regular past participles end in <b>-ed</b> (worked, played). For irregular verbs, see the topic IRREGULAR VERBS.') +
+H('Uses') +
+USES(
+  ['Life experiences (ever, never)', 'Have you ever eaten sushi?', '¿Has comido sushi alguna vez?'],
+  ['Recent actions with a result now (just, already, yet)', "I've just finished my homework.", 'Acabo de terminar los deberes.'],
+  ['Situations that started in the past and continue now (for, since)', 'I have known her since 2018.', 'La conozco desde 2018.'],
+  ['Unfinished time periods (today, this week, this year)', "I haven't seen him this week.", 'No lo he visto esta semana.'],
+  ['News and changes', 'The price has gone up.', 'El precio ha subido.']) +
+H('For and since') +
+T(['', 'Use', 'Example'], [
+  ['<b>for</b>', 'a period of time', 'for two weeks, for a long time (We have lived here for ten years. Vivimos aquí desde hace diez años.)'],
+  ['<b>since</b>', 'a starting point', 'since Monday, since 2015, since I was a child (I have worked here since 2020. Trabajo aquí desde 2020.)']]) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['gone to / been to', 'gone = still there; been = went and came back', 'She has gone to Paris. (Se ha ido a París.) / She has been to Paris. (Ha estado en París.)'],
+  ['Finished time', 'If we say WHEN, use the past simple', 'I saw him yesterday. (not: I have seen him yesterday) (Lo vi ayer.)'],
+  ['The first time…', 'It is the first time + present perfect', "It's the first time I've flown. (Es la primera vez que vuelo.)"],
+  ['yet / still', 'yet = negatives and questions, at the end; still = before the negative auxiliary', "I haven't called him yet. / I still haven't called him. (Todavía no lo he llamado.)"],
+  ['already', 'Between have and the participle, or at the end for emphasis', "She has already left. / She has left already. (Ya se ha ido.)"],
+  ['Be and have in questions', 'How long…? with present perfect, not present simple', 'How long have you lived here? (¿Cuánto tiempo llevas viviendo aquí?)']]) +
+FQ(['always', 'often', 'sometimes', 'rarely', 'never'], "I have never been to London.", 'Nunca he estado en Londres.',
+  NOTE('Also used with the present perfect: <b>once, twice, three times</b> and <b>ever</b> (in questions).', [['I have seen that film twice.', 'He visto esa película dos veces.'], ['Have you ever been to Italy?', '¿Has estado alguna vez en Italia?']])) +
+TIMES('ever', 'never', 'just', 'already', 'yet', 'still', 'for', 'since', 'so far', 'recently', 'lately', 'this week', 'today')
+},
+{ id: 'present-perfect-continuous', sec: 'Present', hue: 'violet', title: 'Present perfect continuous', sub: 'Duration up to now',
+  task: 'Write 6 sentences about things you have been doing for a long time and 2 sentences explaining why you are tired / happy / dirty with this tense. Add 2 questions with How long.',
+  html:
+LEAD('The present perfect continuous emphasises <b>duration</b>: how long an action has been going on, or what has been happening recently.') +
+H('Form') +
+F('have / has + been + verb-ing') +
+T(['', 'Example'], [
+  ['<b>Affirmative</b>', "I've been studying. / He has been working."],
+  ['<b>Negative</b>', "I haven't been sleeping. / He hasn't been working."],
+  ['<b>Question</b>', 'Have you been studying? / How long has he been working?'],
+  ['<b>Short answers</b>', "Yes, I have. / No, he hasn't."]]) +
+H('Uses') +
+USES(
+  ['Actions that started in the past and are still happening (duration)', 'I have been learning English for three years.', 'Llevo tres años aprendiendo inglés.'],
+  ['Actions that have just finished with a visible result', "You're wet. Have you been running?", 'Estás mojado. ¿Has estado corriendo?'],
+  ['Repeated actions up to now', "I've been trying to call you all day.", 'Llevo todo el día intentando llamarte.'],
+  ['Recent activities (lately, recently)', 'She has been working too much lately.', 'Últimamente ha estado trabajando demasiado.']) +
+H('Present perfect or present perfect continuous?') +
+T(['', 'Present perfect', 'Present perfect continuous'], [
+  ['<b>Focus</b>', 'Result, how many', 'Activity, how long'],
+  ['<b>Example</b>', 'I have written five emails. (He escrito cinco correos.)', 'I have been writing emails all morning. (Llevo toda la mañana escribiendo correos.)']]) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Stative verbs', 'Verbs like know, like, be, have (possession) do not take the continuous', 'I have known her for years. (not: I have been knowing) (La conozco desde hace años.)'],
+  ['live and work', 'Both forms are possible with no difference', 'I have lived / have been living here for ten years. (Vivo aquí desde hace diez años.)'],
+  ['Number of times', 'Counting uses the simple form', 'I have read this book three times. (He leído este libro tres veces.)']]) +
+FQ(['always', 'constantly', 'often'], 'She has always been working hard.', 'Siempre ha estado trabajando duro.') +
+TIMES('for', 'since', 'all day', 'all morning', 'lately', 'recently', 'How long…?')
+},
+{ id: 'static-verbs', sec: 'Present', hue: 'violet', title: 'Stative (static) verbs', sub: 'Verbs that rarely take -ing',
+  task: 'Write 10 sentences using stative verbs from the list. Then write 3 pairs of sentences with have, think and see: one with the stative meaning and one with the dynamic meaning.',
+  html:
+LEAD('<b>Stative (static) verbs</b> describe states, not actions. They are normally used in <b>simple tenses</b>, not in continuous tenses.') +
+T(['Type', 'Verbs'], [
+  ['Feelings and preferences', 'like, love, hate, want, need, prefer, wish'],
+  ['Thinking and knowing', 'know, understand, believe, remember, forget, think (= opinion), doubt'],
+  ['Possession', 'have (= own), own, belong, possess'],
+  ['Senses', 'see, hear, smell, taste, sound, look (= seem), feel (= opinion)'],
+  ['Other states', 'be, seem, mean, cost, contain, depend, matter, appear']]) +
+EX(['I know the answer.', 'Sé la respuesta.'], ["She doesn't understand this exercise.", 'Ella no entiende este ejercicio.'], ['This bag belongs to Tom.', 'Esta mochila pertenece a Tom.']) +
+H('Exceptions: verbs with two meanings') +
+T(['Verb', 'Stative meaning (no -ing)', 'Dynamic meaning (-ing possible)'], [
+  ['<b>have</b>', 'I have a car. (own) (Tengo un coche.)', "I'm having lunch. (eating) (Estoy comiendo.)"],
+  ['<b>think</b>', "I think it's great. (opinion) (Creo que es genial.)", "I'm thinking about my holidays. (process) (Estoy pensando en mis vacaciones.)"],
+  ['<b>see</b>', 'I see a bird. (perceive) (Veo un pájaro.)', "I'm seeing the doctor tomorrow. (meeting) (Mañana veo al médico.)"],
+  ['<b>taste</b>', 'The soup tastes good. (La sopa sabe bien.)', "She's tasting the soup. (Está probando la sopa.)"],
+  ['<b>be</b>', 'He is kind. (character) (Es amable.)', 'He is being silly today. (behaving) (Hoy se está comportando como un tonto.)']]) +
+NOTE('In informal English you can hear <i>I\'m loving it</i>, but in an exam use the present simple.', [['I love this song.', 'Me encanta esta canción.']])
+},
+{ id: 'present-simple-vs-continuous', sec: 'Present', hue: 'violet', title: 'Present simple vs present continuous', sub: 'Routine or happening now?',
+  task: 'Write 6 pairs of sentences contrasting what you usually do with what you are doing differently this week.',
+  html:
+LEAD('Choose the tense according to the <b>meaning</b>: is it a routine or a fact, or is it happening now or temporarily?') +
+T(['', 'Present simple', 'Present continuous'], [
+  ['<b>Meaning</b>', 'Habit, routine, fact', 'Happening now, temporary'],
+  ['<b>Form</b>', 'work / works', 'am, is, are + working'],
+  ['<b>Signals</b>', 'always, usually, every day, never', 'now, at the moment, today, these days'],
+  ['<b>Example</b>', 'He walks to school. (Va andando al colegio.)', 'He is driving to school today. (Hoy va en coche al colegio.)']]) +
+EX(['She usually drinks tea, but today she is drinking coffee.', 'Normalmente toma té, pero hoy está tomando café.'], ['I play tennis on Saturdays. I am playing now.', 'Juego al tenis los sábados. Estoy jugando ahora.'], ["Water freezes at 0 degrees. Look, it's freezing!", 'El agua se congela a 0 grados. ¡Mira, se está congelando!']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Stative verbs', 'They stay in the present simple even if it is happening now', 'I want a coffee now. (not: I am wanting) (Ahora quiero un café.)'],
+  ['Always', 'present simple = neutral; present continuous = annoyed', "He always arrives late. / He is always arriving late! (Siempre llega tarde. / ¡Siempre está llegando tarde!)"],
+  ['Future', 'Present continuous = arrangement; present simple = timetable', "I'm leaving at six. / The train leaves at six. (Me voy a las seis. / El tren sale a las seis.)"]])
+},
+
+/* ===== PAST ===== */
+{ id: 'past-simple', sec: 'Past', hue: 'pink', title: 'Past simple', sub: 'Finished actions in the past',
+  task: 'Write a paragraph of 8 sentences about what you did last weekend. Include 2 negatives and 2 questions with short answers.',
+  html:
+LEAD('The past simple describes <b>finished actions</b> at a definite time in the past and <b>sequences</b> of past events.') +
+H('Form') +
+T(['', 'All persons'], [
+  ['<b>Affirmative</b>', 'I worked / I went'],
+  ['<b>Negative</b>', "I didn't work / I didn't go"],
+  ['<b>Question</b>', 'Did you work? / Where did you go?'],
+  ['<b>Short answers</b>', "Yes, I did. / No, I didn't."]]) +
+NOTE('After <i>did</i> and <i>didn\'t</i> the main verb goes back to the <b>base form</b>.', [['Did she go to the party?', '¿Fue ella a la fiesta?'], ["She didn't go to the party. (not: didn't went)", 'No fue a la fiesta.']]) +
+H('Uses') +
+USES(
+  ['Finished action at a definite time', 'We visited my grandmother yesterday.', 'Visitamos a mi abuela ayer.'],
+  ['Sequence of events (stories)', 'He opened the door, looked inside and smiled.', 'Abrió la puerta, miró dentro y sonrió.'],
+  ['Past habits and states that are over', 'I lived in Madrid when I was a child.', 'Viví en Madrid de niño.'],
+  ['Finished periods of time (ago, last…, in 2019)', 'They moved here two years ago.', 'Se mudaron aquí hace dos años.']) +
+H('Regular verbs: spelling of -ed') +
+T(['Rule', 'Examples'], [
+  ['Normal: add <b>-ed</b>', 'work → worked (We worked all day. Trabajamos todo el día.)'],
+  ['Ends in -e: add <b>-d</b>', 'like → liked, live → lived (I liked it. Me gustó.)'],
+  ['Consonant-vowel-consonant: double the consonant', 'stop → stopped, plan → planned (The bus stopped. El autobús paró.)'],
+  ['Consonant + y → <b>-ied</b>', 'study → studied, cry → cried (She cried. Lloró.)'],
+  ['Vowel + y: just add -ed', 'play → played, enjoy → enjoyed (We enjoyed it. Lo disfrutamos.)']]) +
+P('For irregular past forms (went, saw, bought…), see the topic IRREGULAR VERBS.') +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['The verb <i>be</i>', 'No <i>did</i>: use was / were', "Were you at home? / I wasn't there. (¿Estabas en casa? / No estaba allí.)"],
+  ['Subject questions', 'No <i>did</i> when the question word is the subject', 'Who called you? (not: Who did call you) (¿Quién te llamó?)'],
+  ['Can and modals', 'No <i>did</i>: could / couldn\'t', "I couldn't open it. (No pude abrirlo.)"],
+  ['Emphasis', 'Did + base verb in an affirmative sentence', 'I did tell you! (¡Sí que te lo dije!)']]) +
+FQ('all', 'When I was young, I often played football.', 'De joven, jugaba a menudo al fútbol.') +
+TIMES('yesterday', 'last week', 'two days ago', 'in 2019', 'when I was a child', 'then', 'at that time')
+},
+{ id: 'past-continuous', sec: 'Past', hue: 'pink', title: 'Past continuous', sub: 'Actions in progress in the past',
+  task: 'Write what you and your family were doing at 9 pm yesterday (5 sentences) and 3 sentences with when / while describing an interruption.',
+  html:
+LEAD('The past continuous describes actions <b>in progress at a specific moment in the past</b>, the <b>background</b> of a story, and actions that were <b>interrupted</b>.') +
+H('Form') +
+F('was / were + verb-ing') +
+T(['', 'Example'], [
+  ['<b>Affirmative</b>', 'I was sleeping. / They were playing.'],
+  ['<b>Negative</b>', "I wasn't sleeping. / They weren't playing."],
+  ['<b>Question</b>', 'Were you sleeping? / What were they doing?'],
+  ['<b>Short answers</b>', "Yes, I was. / No, they weren't."]]) +
+H('Uses') +
+USES(
+  ['An action in progress at a specific moment in the past', "At eight o'clock yesterday I was having dinner.", 'Ayer a las ocho estaba cenando.'],
+  ['Background description in a story', 'It was raining and people were running home.', 'Llovía y la gente corría a casa.'],
+  ['Two actions in progress at the same time (while)', 'While she was cooking, he was watching TV.', 'Mientras ella cocinaba, él veía la tele.'],
+  ['An action interrupted by another (past simple)', 'I was walking home when it started to rain.', 'Iba andando a casa cuando empezó a llover.'],
+  ['Annoying past habits (always)', 'He was always borrowing my things.', 'Siempre me estaba cogiendo mis cosas.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Stative verbs', 'No continuous: use past simple', 'I knew the answer. (not: I was knowing) (Sabía la respuesta.)'],
+  ['Spelling', 'The same rules as the present continuous', 'run → running, make → making (She was making tea. Estaba preparando té.)'],
+  ['Completed actions', 'Use past simple for a whole action', 'I read the book yesterday. (Leí el libro ayer.) / I was reading the book at 8. (Estaba leyendo el libro a las 8.)']]) +
+FQ(['always', 'constantly', 'often'], 'She was always complaining.', 'Siempre se estaba quejando.') +
+TIMES("at 8 o'clock yesterday", 'while', 'when', 'all day', 'all evening', 'at that moment', 'at that time')
+},
+{ id: 'past-perfect', sec: 'Past', hue: 'pink', title: 'Past perfect', sub: 'The past before the past',
+  task: 'Write 6 sentences with two past actions each, using before, after, by the time or when. Use the past perfect for the earlier action.',
+  html:
+LEAD('The past perfect is for an action that happened <b>before another action or moment in the past</b>.') +
+H('Form') +
+F('had + past participle') +
+T(['', 'Example'], [
+  ['<b>Affirmative</b>', 'I had finished. / She had left.'],
+  ['<b>Negative</b>', "I hadn't finished. / She hadn't left."],
+  ['<b>Question</b>', 'Had you finished? / Had she left?'],
+  ['<b>Short answers</b>', "Yes, I had. / No, she hadn't."]]) +
+H('Uses') +
+USES(
+  ['An action completed before another past action or time', 'When I arrived, the film had already started.', 'Cuando llegué, la película ya había empezado.'],
+  ['The reason for a past situation', 'She was sad because she had lost her phone.', 'Estaba triste porque había perdido el móvil.'],
+  ['With after, before, by the time', 'After they had eaten, they went for a walk.', 'Después de comer, dieron un paseo.'],
+  ['In reported speech and in the third conditional', 'He said he had seen her.', 'Dijo que la había visto.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Sequence vs earlier action', 'One after another = past simple. Earlier action = past perfect.', 'When I arrived, he left. (He left after.) / When I arrived, he had left. (He was gone before.)'],
+  ['before / after', 'With before and after the past simple is also correct', 'After they ate, they left. / After they had eaten, they left. (Después de comer, se fueron.)'],
+  ['Not with a definite time', 'No past perfect when the time is given and the order is clear', 'I got up at 7. (not: I had got up at 7) (Me levanté a las 7.)'],
+  ['By the time', 'by the time + past simple → past perfect', 'By the time we arrived, they had gone. (Para cuando llegamos, se habían ido.)']]) +
+FQ(['always', 'often', 'sometimes', 'rarely', 'never'], 'I had never seen snow before that day.', 'Nunca había visto nieve antes de ese día.') +
+TIMES('before', 'after', 'when', 'by the time', 'already', 'until', 'just', 'never … before', 'by then')
+},
+{ id: 'past-perfect-continuous', sec: 'Past', hue: 'pink', title: 'Past perfect continuous', sub: 'Duration before a past moment',
+  task: 'Write 5 sentences explaining the reason for a past situation (He was tired because he had been…) and 3 with for / since.',
+  html:
+LEAD('The past perfect continuous shows that an action had been <b>in progress for some time before</b> another moment or action in the past. It often gives the <b>reason</b> for a past situation.') +
+H('Form') +
+F('had + been + verb-ing') +
+T(['', 'Example'], [
+  ['<b>Affirmative</b>', 'I had been waiting for an hour.'],
+  ['<b>Negative</b>', "She hadn't been sleeping well."],
+  ['<b>Question</b>', 'How long had they been walking?'],
+  ['<b>Short answers</b>', "Yes, I had. / No, they hadn't."]]) +
+H('Uses') +
+USES(
+  ['An action in progress up to a past moment (duration)', 'When he arrived, we had been waiting for two hours.', 'Cuando llegó, llevábamos dos horas esperando.'],
+  ['The cause of a past situation', 'She was tired because she had been studying all night.', 'Estaba cansada porque había estado estudiando toda la noche.'],
+  ['Visible evidence in the past', 'The ground was wet. It had been raining.', 'El suelo estaba mojado. Había estado lloviendo.']) +
+H('Past perfect or past perfect continuous?') +
+EX(['I had read the book. (finished)', 'Había leído el libro.'], ['I had been reading the book. (duration, maybe unfinished)', 'Llevaba un rato leyendo el libro.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Stative verbs', 'Use the past perfect simple', 'I had known him for years. (not: had been knowing) (Lo conocía desde hacía años.)'],
+  ['Counting', 'Use the simple form for numbers of times', 'She had read three books. (Había leído tres libros.)']]) +
+FQ(['always', 'constantly', 'often'], 'He had always been dreaming of travelling.', 'Siempre había estado soñando con viajar.') +
+TIMES('for', 'since', 'all day', 'how long…', 'before', 'by the time', 'until then')
+},
+{ id: 'used-to', sec: 'Past', hue: 'pink', title: 'Used to', sub: 'Past habits and past states',
+  task: 'Write 6 sentences about how your life was different 10 years ago, with used to. Include 2 negatives and 2 questions with short answers.',
+  html:
+LEAD('We use <b>used to</b> for <b>past habits</b> and <b>past states</b> that are not true now.') +
+T(['', 'Form', 'Example'], [
+  ['<b>Affirmative</b>', 'subject + used to + base verb', 'I used to play football.'],
+  ['<b>Negative</b>', "subject + didn't use to + base verb", "She didn't use to like fish."],
+  ['<b>Question</b>', 'Did + subject + use to + base verb?', 'Did you use to live here?'],
+  ['<b>Short answers</b>', "Yes, I did. / No, I didn't.", '']]) +
+H('Uses') +
+USES(
+  ['Past habits (repeated actions)', 'We used to go to the beach every summer.', 'Íbamos a la playa todos los veranos.'],
+  ['Past states', 'There used to be a cinema here.', 'Antes había un cine aquí.'],
+  ['Contrast between past and present', "He didn't use to wear glasses.", 'Antes no llevaba gafas.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Spelling in negatives and questions', 'use to (without -d), because did carries the past', 'Did you use to have long hair? (¿Solías tener el pelo largo?)'],
+  ['Would for habits', 'Would can replace used to for repeated actions, never for states', 'We would visit my aunt every Sunday. (Visitábamos a mi tía cada domingo.) / I used to have a dog. (not: I would have a dog) (Tenía un perro.)'],
+  ['Exact number of times', 'No used to: use the past simple', 'I went there three times. (not: I used to go there three times) (Fui allí tres veces.)'],
+  ['Be used to + -ing', 'Different meaning: to be accustomed to', 'I am used to getting up early. / I used to get up late. (Estoy acostumbrado a madrugar. / Antes me levantaba tarde.)']]) +
+FQ(['always', 'often', 'sometimes', 'never'], 'I never used to eat vegetables.', 'Antes nunca comía verduras.')
+},
+{ id: 'past-simple-vs-continuous', sec: 'Past', hue: 'pink', title: 'Past simple vs past continuous', sub: 'Interrupted actions and background',
+  task: 'Write a short story of 8 sentences using both tenses, with at least 3 sentences with when and 3 with while.',
+  html:
+LEAD('The <b>past continuous</b> gives the <b>background</b> or the long action in progress. The <b>past simple</b> gives the <b>main events</b> or the short action that interrupts.') +
+T(['', 'Past simple', 'Past continuous'], [
+  ['<b>Role</b>', 'Finished event, new action', 'Background, action in progress'],
+  ['<b>Duration</b>', 'Short, complete', 'Longer, unfinished at that moment'],
+  ['<b>With</b>', 'when + short action', 'while + long action']]) +
+EX(['I was watching TV when the phone rang.', 'Veía la tele cuando sonó el teléfono.'], ['While she was walking home, she saw an accident.', 'Mientras caminaba a casa, vio un accidente.'], ['He fell asleep while he was reading.', 'Se quedó dormido mientras leía.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Two tenses, two meanings', 'The tense changes who did it first', 'When I arrived, they were having dinner. (They were already eating.) / When I arrived, they had dinner. (First I arrived, then they ate.)'],
+  ['Two long actions at the same time', 'Both continuous with while', 'While I was cooking, he was studying. (Mientras yo cocinaba, él estudiaba.)'],
+  ['A series of completed actions', 'Past simple only', 'She got up, had a shower and left. (Se levantó, se duchó y se fue.)'],
+  ['Stative verbs', 'Past simple even for a long state', 'I knew the answer while he was speaking. (Yo sabía la respuesta mientras él hablaba.)']])
+},
+
+/* ===== FUTURE ===== */
+{ id: 'will', sec: 'Future', hue: 'orange', title: 'Will', sub: 'Decisions, predictions, promises',
+  task: 'Write 8 sentences with will: two spontaneous decisions, two predictions, two promises and two offers. Add 2 questions.',
+  html:
+LEAD('<b>Will</b> is used to talk about the future when there is no plan yet, or to give an opinion, a promise or an offer.') +
+H('Form') +
+F('will + base verb (same form for all persons)') +
+T(['', 'Example'], [
+  ['<b>Affirmative</b>', "I will help you. / I'll help you."],
+  ['<b>Negative</b>', "She will not (won't) come."],
+  ['<b>Question</b>', 'Will you help me? / When will they arrive?'],
+  ['<b>Short answers</b>', "Yes, I will. / No, I won't."]]) +
+H('Uses') +
+USES(
+  ['Spontaneous decisions', "I'm hungry. I'll make a sandwich.", 'Tengo hambre. Voy a hacerme un bocadillo.'],
+  ['Predictions based on opinion', 'I think she will pass the exam.', 'Creo que aprobará el examen.'],
+  ['Promises', 'I promise I will call you.', 'Te prometo que te llamaré.'],
+  ['Offers and requests', "I'll carry that for you.", 'Te lo llevo yo.'],
+  ['Warnings and threats', "Be careful or you'll fall.", 'Ten cuidado o te caerás.'],
+  ['Facts about the future', 'Tomorrow will be Tuesday.', 'Mañana será martes.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['After if / when / as soon as', 'No will in the time or condition clause: use the present simple', "I'll call you when I get home. (not: when I will get home) (Te llamaré cuando llegue a casa.)"],
+  ['Shall', 'Shall + I / we for offers and suggestions', 'Shall we go? (¿Nos vamos?)'],
+  ['Contractions', "I will → I'll; will not → won't", "They won't come. (No vendrán.)"]]) +
+FQ(['always', 'usually', 'often', 'sometimes', 'never'], "I will always remember this day.", 'Siempre recordaré este día.') +
+TIMES('I think', 'I hope', 'I expect', 'probably', 'perhaps', 'maybe', 'tomorrow', 'next week', 'soon', 'in 2030')
+},
+{ id: 'future-continuous', sec: 'Future', hue: 'orange', title: 'Future continuous', sub: 'In progress at a future time',
+  task: 'Write 6 sentences about what you will be doing at specific times next week (this time tomorrow, at 8 pm on Friday…). Add 2 questions with Will you be…?',
+  html:
+LEAD('The future continuous describes an action that will be <b>in progress at a specific time in the future</b>.') +
+H('Form') +
+F('will + be + verb-ing') +
+T(['', 'Example'], [
+  ['<b>Affirmative</b>', "I will be working. / I'll be working."],
+  ['<b>Negative</b>', "She won't be working."],
+  ['<b>Question</b>', 'Will you be working? / What will he be doing?'],
+  ['<b>Short answers</b>', "Yes, I will. / No, she won't."]]) +
+H('Uses') +
+USES(
+  ['An action in progress at a specific future time', 'This time tomorrow I will be flying to Rome.', 'Mañana a esta hora estaré volando a Roma.'],
+  ['Events that will happen in the normal course of things', "Don't call at eight. We'll be having dinner.", 'No llames a las ocho. Estaremos cenando.'],
+  ['Polite questions about someone\'s plans', 'Will you be using the car tonight?', '¿Vas a usar el coche esta noche?'],
+  ['Two actions in progress at the same time in the future', 'I will be cooking while you are working.', 'Yo estaré cocinando mientras tú trabajas.']) +
+H('Future simple or future continuous?') +
+T(['', 'Will + verb', 'Will be + -ing'], [
+  ['<b>Meaning</b>', 'Decision, prediction, promise', 'Action in progress at a future moment'],
+  ['<b>Example</b>', "I'll call you at 8. (Te llamaré a las 8.)", "At 8 I'll be having dinner. (A las 8 estaré cenando.)"]]) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Stative verbs', 'No continuous: use will + base verb', "I'll know the results on Monday. (not: I'll be knowing) (El lunes sabré los resultados.)"],
+  ['After when / while / as', 'Present simple or present continuous in the time clause', 'I will be sleeping when you arrive. (Estaré durmiendo cuando llegues.)']]) +
+FQ(['always', 'usually', 'often', 'sometimes'], 'I will always be waiting for you.', 'Siempre te estaré esperando.') +
+TIMES('this time tomorrow', 'at 8 pm tomorrow', 'next week at this time', 'in two hours', 'all day tomorrow', 'by this time next year')
+},
+{ id: 'going-to', sec: 'Future', hue: 'orange', title: 'Be going to', sub: 'Plans and evidence',
+  task: 'Write 5 sentences about your plans for next year and 3 predictions based on things you can see around you now.',
+  html:
+LEAD('We use <b>be going to</b> for <b>plans and intentions</b> already decided, and for <b>predictions based on evidence</b> we can see now.') +
+H('Form') +
+F('am / is / are + going to + base verb') +
+T(['', 'Example'], [
+  ['<b>Affirmative</b>', "I'm going to study. / She's going to travel."],
+  ['<b>Negative</b>', "I'm not going to study. / They aren't going to come."],
+  ['<b>Question</b>', 'Are you going to study? / What is she going to do?'],
+  ['<b>Short answers</b>', "Yes, I am. / No, she isn't."]]) +
+H('Uses') +
+USES(
+  ['Plans and intentions decided before speaking', "I'm going to learn the guitar this year.", 'Voy a aprender guitarra este año.'],
+  ['Predictions based on present evidence', "Look at those clouds. It's going to rain.", 'Mira esas nubes. Va a llover.'],
+  ['Something that is about to happen', 'Watch out! You are going to fall!', '¡Cuidado! ¡Te vas a caer!']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Verbs of movement', 'With go and come we prefer the present continuous', "I'm going to the cinema. / She's coming tomorrow. (Voy al cine. / Viene mañana.)"],
+  ['Past intentions', 'was / were going to = a plan that did not happen', 'I was going to call you, but I forgot. (Iba a llamarte, pero se me olvidó.)'],
+  ['Speech', 'In speech going to often sounds like gonna (informal)', "I'm gonna leave. (Me voy a ir.)"]]) +
+FQ(['always', 'never'], "I'm never going to give up.", 'Nunca voy a rendirme.') +
+TIMES('tomorrow', 'next year', 'this summer', 'tonight', 'soon', 'in a few days', 'later')
+},
+{ id: 'will-vs-going-to', sec: 'Future', hue: 'orange', title: 'Will vs be going to', sub: 'Decision now or plan already made?',
+  task: 'Write 6 pairs of sentences: first a plan (going to) and then a spontaneous reaction (will) in the same situation.',
+  html:
+LEAD('Both refer to the future. The difference is <b>when the decision was made</b> and the <b>evidence</b> we have.') +
+T(['', 'Will', 'Be going to'], [
+  ['<b>Decision</b>', 'Made at the moment of speaking', 'Made before speaking'],
+  ['<b>Prediction</b>', 'Opinion, no evidence', 'Based on evidence now'],
+  ['<b>Also</b>', 'Promises, offers, warnings', 'Plans and intentions'],
+  ['<b>Example</b>', "The phone is ringing. I'll answer it. (Suena el teléfono. Lo cojo yo.)", "I'm going to buy a new phone next week. (Voy a comprar un móvil nuevo la semana que viene.)"]]) +
+EX(["— We have no milk. — OK, I'll go to the shop.", '— No tenemos leche. — Vale, iré a la tienda.'], ["I've decided: I'm going to study medicine.", 'Lo he decidido: voy a estudiar medicina.'], ["Careful! You're going to fall!", '¡Cuidado! ¡Te vas a caer!'], ['I think it will be a great party.', 'Creo que será una gran fiesta.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Opinion + evidence', 'I think + will for opinion; going to for evidence', "I think it will be sunny. / Look, it's going to be sunny. (Creo que hará sol. / Mira, va a hacer sol.)"],
+  ['Promises and offers', 'Only will', "I'll help you. (not: I'm going to help you) (Te ayudaré.)"],
+  ['Both possible', 'In many predictions both are correct', "It will rain tomorrow. / It is going to rain tomorrow. (Mañana lloverá.)"]])
+},
+{ id: 'present-continuous-future', sec: 'Future', hue: 'orange', title: 'Present continuous for the future', sub: 'Fixed arrangements',
+  task: 'Write your diary for next week with 6 fixed arrangements (who, what, when) using the present continuous. Then write 2 sentences using the present simple for timetables.',
+  html:
+LEAD('We use the <b>present continuous</b> for <b>fixed arrangements</b> in the near future: time, place or people are already agreed.') +
+F('am / is / are + verb-ing + future time') +
+USES(
+  ['Arrangements with a time and a person', "I'm meeting Anna at six tomorrow.", 'Mañana quedo con Anna a las seis.'],
+  ['Travel plans with tickets or bookings', 'They are flying to Rome on Friday.', 'Vuelan a Roma el viernes.'],
+  ['Questions about someone\'s plans', 'What are you doing this weekend?', '¿Qué haces este fin de semana?']) +
+H('Arrangement or intention?') +
+T(['', 'Present continuous', 'Be going to'], [
+  ['<b>Meaning</b>', 'Arranged: date, tickets, people', 'Intention, may not be arranged'],
+  ['<b>Example</b>', "I'm seeing the dentist on Monday. (El lunes voy al dentista.)", "I'm going to be a dentist. (Voy a ser dentista.)"]]) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Timetables', 'Use the present simple, not the continuous', 'The film starts at eight. (La película empieza a las ocho.)'],
+  ['Stative verbs', 'Cannot be continuous: use will / going to', "I'll be at home tomorrow. (not: I'm being at home) (Mañana estaré en casa.)"],
+  ['No arrangement yet', 'Use will or going to', "I think I'll go to the cinema. (Creo que iré al cine.)"]]) +
+TIMES('tomorrow', 'tonight', 'next week', 'on Friday', 'this weekend', 'at six', 'in two days')
+}
+]});
+/* ---------- GERUND AND INFINITIVE ---------- */
+GROUPS.push({ id: 'gerund-infinitive', name: 'Gerund and infinitive', hue: 'green', topics: [
+{ id: 'gerund-infinitive', title: 'Gerund and infinitive', sub: 'Verb + -ing or verb + to?',
+  task: 'Write 10 sentences: 3 with verbs followed by the gerund, 3 with verbs followed by the infinitive, and 4 with remember, forget or stop in both patterns.',
+  html:
+LEAD('When one verb follows another, the second verb can be a <b>gerund</b> (verb + <i>-ing</i>) or an <b>infinitive</b> (<i>to</i> + base verb). Which one we use depends on the first verb, the preposition or the adjective before it.') +
+H('The gerund (verb + -ing)') +
+USES(
+  ['As the subject of a sentence', 'Playing board games is fun.', 'Jugar a juegos de mesa es divertido.'],
+  ['After certain verbs: <i>finish, enjoy, avoid, miss, recommend, suggest, imagine, regret, keep, mind, dislike, practise</i>', 'She has finished writing her essay.', 'Ella ha terminado de escribir su redacción.'],
+  ['After prepositions', 'He apologised for being late.', 'Se disculpó por llegar tarde.'],
+  ['After some expressions: <i>can\'t stand, feel like, don\'t mind, it\'s no use, look forward to, have no problem, have fun, spend time</i>', "I'm looking forward to going to the party.", 'Tengo muchas ganas de ir a la fiesta.']) +
+H('The infinitive (to + base verb)') +
+USES(
+  ['After certain verbs: <i>decide, want, promise, hope, pretend, refuse, offer, agree, seem, appear, choose, expect, learn, plan, wish, allow</i>', 'We decided to join a yoga class.', 'Decidimos apuntarnos a una clase de yoga.'],
+  ['After adjectives: <i>easy, happy, sad, lucky, weak, hard, nice, difficult</i>', 'They were lucky to win the lottery.', 'Tuvieron suerte de ganar la lotería.'],
+  ['To express purpose (why we do something)', 'I went to the shop to buy some bread.', 'Fui a la tienda a comprar pan.'],
+  ['After question words (what, where, how, who)', "I don't know what to do.", 'No sé qué hacer.']) +
+H('Verbs followed by both, with no change in meaning') +
+P('<i>Like, love, hate, prefer, begin, start</i> and <i>continue</i> can take either form.') +
+EX(['She prefers staying / to stay at home.', 'Ella prefiere quedarse en casa.'], ['It started raining / to rain.', 'Empezó a llover.']) +
+H('Verbs that change meaning') +
+T(['Verb', 'Pattern', 'Meaning', 'Example'], [
+  ['<b>remember</b>', '+ gerund', 'recall something that happened', 'I remember eating at that restaurant when I was in Toronto. (Recuerdo haber comido en ese restaurante cuando estuve en Toronto.)'],
+  ['<b>remember</b>', '+ infinitive', 'not forget to do something', 'She remembered to buy the ingredients for the cake. (Se acordó de comprar los ingredientes para la tarta.)'],
+  ['<b>forget</b>', '+ gerund', 'used in negatives: never forget an experience', "Tim will never forget meeting his favourite singer. (Tim nunca olvidará haber conocido a su cantante favorito.)"],
+  ['<b>forget</b>', '+ infinitive', 'not remember to do something', 'I forgot to buy the tickets for the theatre. (Me olvidé de comprar las entradas para el teatro.)'],
+  ['<b>stop</b>', '+ gerund', 'quit an action or habit', 'She stopped using her mobile phone a month ago. (Dejó de usar el móvil hace un mes.)'],
+  ['<b>stop</b>', '+ infinitive', 'stop one thing in order to do another', "They didn't stop to have lunch on their way home. (No pararon para comer de camino a casa.)"]]) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['<i>to</i> as a preposition', 'Some expressions end in to (preposition), so we use -ing: look forward to, be used to, object to', "I'm looking forward to seeing you. (not: to see) (Tengo ganas de verte.)"],
+  ['would like / would love / would hate / would prefer', 'Always the infinitive', 'I would like to travel. (Me gustaría viajar.)'],
+  ['make / let + object', 'Bare infinitive (no to)', 'She made me laugh. / He let us go. (Me hizo reír. / Nos dejó ir.)'],
+  ['modal verbs', 'Bare infinitive (no to)', 'You must go. (Debes ir.)'],
+  ['Negative form', 'not before the gerund or the infinitive', "I decided not to go. / Not eating is bad for you. (Decidí no ir. / No comer es malo para ti.)"]])
+}
+]});
+
+/* ---------- THE PASSIVE VOICE ---------- */
+GROUPS.push({ id: 'passive', name: 'The passive voice', hue: 'red', topics: [
+{ id: 'passive-voice', title: 'The passive voice', sub: 'Focus on the action, not the person who does it',
+  task: 'Rewrite 8 active sentences in the passive (different tenses). Then write 2 impersonal passives, 2 personal passives and 2 causative sentences.',
+  html:
+LEAD('In the passive voice the <b>object</b> of the active sentence becomes the <b>subject</b>. We use it when the action is more important than the person who does it.') +
+H('The passive in every tense') +
+`<div class="tw"><table class="pt"><thead><tr><th>Tenses</th><th>Active</th><th>Passive</th></tr></thead><tbody>
+<tr><td><b>Present simple</b></td><td>The waiter <b>serves</b> the customers.</td><td>The customers <b>are served</b> by the waiter.</td></tr>
+<tr><td><b>Present continuous</b></td><td>The waiter <b>is serving</b> the customers.</td><td>The customers <b>are being served</b> by the waiter.</td></tr>
+<tr><td><b>Past simple</b></td><td>The waiter <b>served</b> the customers.</td><td>The customers <b>were served</b> by the waiter.</td></tr>
+<tr><td><b>Past continuous</b></td><td>The waiter <b>was serving</b> the customers.</td><td>The customers <b>were being served</b> by the waiter.</td></tr>
+<tr><td><b>Present perfect simple</b></td><td>The waiter <b>has served</b> the customers.</td><td>The customers <b>have been served</b> by the waiter.</td></tr>
+<tr><td><b>Past perfect simple</b></td><td>The waiter <b>had served</b> the customers.</td><td>The customers <b>had been served</b> by the waiter.</td></tr>
+<tr><td><b>Future simple</b></td><td>The waiter <b>will serve</b> the customers.</td><td>The customers <b>will be served</b> by the waiter.</td></tr>
+<tr><td><b>Future perfect simple</b></td><td>The waiter <b>will have served</b> the customers.</td><td>The customers <b>will have been served</b> by the waiter.</td></tr>
+<tr><td><b>Modals</b></td><td>The waiter <b>must serve</b> the customers.</td><td>The customers <b>must be served</b> by the waiter.</td></tr>
+<tr><td><b>Modal perfects</b></td><td>The waiter <b>must have served</b> the customers.</td><td>The customers <b>must have been served</b> by the waiter.</td></tr>
+<tr><td><b>have to</b></td><td>The waiter <b>has to serve</b> the customers.</td><td>The customers <b>have to be served</b> by the waiter.</td></tr>
+<tr><td><b>be going to</b></td><td>The waiter <b>is going to serve</b> the customers.</td><td>The customers <b>are going to be served</b> by the waiter.</td></tr>
+</tbody></table></div>` +
+H('How to change an active sentence into a passive sentence') +
+OL('Take the <b>object</b> of the active sentence and make it the <b>subject</b>.', 'Use the verb <b>to be</b> in the <b>same tense</b> as the active verb.', 'Add the <b>past participle</b> of the main verb.', 'Add the old subject at the end with <b>by</b> (only if it is necessary).') +
+EX(['ACTIVE: Tom walks the dog three times a day.', 'ACTIVA: Tom pasea al perro tres veces al día.'], ['PASSIVE: The dog is walked three times a day (by Tom).', 'PASIVA: El perro es paseado tres veces al día (por Tom).']) +
+H('Negatives and questions') +
+T(['', 'Rule', 'Example'], [
+  ['<b>Negative</b>', 'to be + not + past participle', "The table wasn't assembled by Phil. (La mesa no fue montada por Phil.)"],
+  ['<b>Question</b>', 'to be goes before the subject', 'Was the table assembled by Phil? (¿Fue montada la mesa por Phil?)'],
+  ['<b>With modals or future</b>', 'The modal or auxiliary takes the negative', "That episode can't be dubbed until next Monday. (Ese episodio no puede doblarse hasta el próximo lunes.)"]]) +
+H('Agents: by and with') +
+T(['', 'Use', 'Example'], [
+  ['<b>by</b>', 'The person or thing that does the action (the agent)', 'The window was broken by a boy. (La ventana fue rota por un chico.)'],
+  ['<b>with</b>', 'The tool or material used (the instrument)', 'The window was broken with a stone. (La ventana fue rota con una piedra.)']]) +
+H('When we do not mention the agent') +
+P('We usually leave out <b>by + agent</b> when:') +
+UL('We <b>do not know</b> who did what we are talking about.', 'We are <b>not interested</b> in who did it, or it is <b>not important</b>.', 'It is <b>easy to understand</b> who did it without mentioning it.', 'The subject of the active sentence is something like <i>somebody, people, they, one</i>.') +
+EX(['My bike was stolen last night.', 'Me robaron la bici anoche. (we do not know who)'], ['The road is being repaired.', 'Están arreglando la carretera. (the agent is not important)'], ['The criminal was arrested.', 'El delincuente fue detenido. (obviously by the police)'], ['English is spoken all over the world.', 'El inglés se habla en todo el mundo. (people)']) +
+H('Verbs with two objects') +
+P('Verbs like <b>give, tell, send, show, bring, write, offer, pay</b> have an indirect object (IO: who receives) and a direct object (DO: what is given). Both can become the subject of the passive.') +
+EX(['ACTIVE: The queen gave me a medal.', 'La reina me dio una medalla.'], ['IO as subject: I was given a medal by the queen.', 'Recibí una medalla de la reina.'], ['DO as subject: A medal was given to me by the queen.', 'Una medalla me fue entregada por la reina.']) +
+NOTE('When the direct object is the subject, we need <b>to</b> before the person (<i>to me</i>). The first form (IO as subject) is more common.') +
+H('Impersonal and personal passive') +
+P('With reporting verbs such as <b>claim, agree, announce, believe, consider, expect, hope, know, report, say, suggest, think, understand</b> we can use two passive structures.') +
+T(['', 'Structure', 'Example'], [
+  ['<b>Active</b>', 'People + reporting verb + that + clause', 'People believe that he lied in court. (La gente cree que mintió en el juicio.)'],
+  ['<b>Impersonal passive</b>', 'It + be + participle + that + clause', 'It is believed that he lied in court. (Se cree que mintió en el juicio.)'],
+  ['<b>Personal passive</b>', 'Subject + be + participle + to-infinitive', 'He is believed to have lied in court. (Se cree que él mintió en el juicio.)']]) +
+H('How to make the change') +
+OL('For the <b>impersonal passive</b>: put <i>it</i> as the subject, change the reporting verb to the passive and keep the <i>that</i>-clause unchanged.', 'For the <b>personal passive</b>: the subject of the <i>that</i>-clause becomes the subject of the sentence. Change the reporting verb to the passive and remove <i>that</i>.', 'Use the <b>present infinitive</b> (to + base) if the action is at the same time or later than the reporting verb; use the <b>perfect infinitive</b> (to have + participle) if the action is earlier.') +
+EX(['They say that she is rich. → She is said to be rich.', 'Dicen que es rica. → Se dice que es rica.'], ['They say that she was rich. → She is said to have been rich.', 'Dicen que era rica. → Se dice que fue rica.'], ['They expect that he will arrive soon. → He is expected to arrive soon.', 'Esperan que llegue pronto. → Se espera que llegue pronto.'], ['People believed that he was a spy. → He was believed to be a spy.', 'La gente creía que era un espía. → Se creía que era un espía.']) +
+H('The causative: have / get something done') +
+P('<b>Use:</b> we use the causative to say that we have <b>arranged for someone to do something for us</b>.') +
+T(['', 'Form', 'Example'], [
+  ['<b>Affirmative</b>', 'subject + have / get + object + past participle', 'She has her house cleaned once a week. (Se limpia la casa una vez por semana. / Hace que le limpien la casa.)'],
+  ['<b>Negative</b>', "subject + don't / didn't have + object + past participle", "She doesn't have her house cleaned. (No hace que le limpien la casa.)"],
+  ['<b>Question</b>', 'Do / Did + subject + have + object + past participle…?', 'Did you have your car repaired? (¿Hiciste arreglar tu coche?)']]) +
+EX(['ACTIVE: She cleans the house once a week.', 'ACTIVA: Ella limpia la casa una vez por semana.'], ['CAUSATIVE: She has her house cleaned once a week.', 'CAUSATIVA: Hace limpiar su casa una vez por semana.'], ['I got my hair cut yesterday.', 'Ayer me corté el pelo (en la peluquería).']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Intransitive verbs', 'No passive (no object): happen, arrive, die, sleep, go, come', 'The accident happened last night. (not: was happened) (El accidente ocurrió anoche.)'],
+  ['Stative verbs with have, fit, suit, lack', 'Usually not in the passive', 'She has a new car. (not: A new car is had by her) (Tiene un coche nuevo.)'],
+  ['Get passive', 'Informal: get + participle for things that happen by accident or change', 'He got hurt in the match. (Se lastimó en el partido.)'],
+  ['Time expressions', 'Passive keeps the same time expressions as the active', 'The room was cleaned yesterday. (La habitación fue limpiada ayer.)']])
+}
+]});
+
+/* ---------- CONDITIONAL SENTENCES ---------- */
+const CRow = (cond, rows) => rows.map((r, i) => `<tr>${i === 0 ? `<td class="cc" rowspan="${rows.length}">${cond}</td>` : ''}<td class="cr">${r[0]}</td><td>${r[1]}</td></tr>`).join('');
+GROUPS.push({ id: 'conditionals', name: 'Conditional sentences', hue: 'orange', topics: [
+{ id: 'conditional-sentences', title: 'Conditional sentences', sub: 'Zero, first, second and third conditionals',
+  task: 'Write 2 sentences of each type (zero, first, second and third) about your own life. Then rewrite 2 of them changing the order of the clauses and use the comma correctly.',
+  html:
+LEAD('A conditional sentence has a <b>conditional clause</b> (with <i>if, when, unless</i>) and a <b>result clause</b>. The two clauses can go in either order. We use a comma when the <i>if</i>-clause comes first.') +
+`<div class="tw"><table class="ct"><thead><tr><th>Conditional clause</th><th>Result clause</th><th>Examples</th></tr></thead><tbody>
+<tr class="band c-orange"><td colspan="3">Zero conditional</td></tr>
+${CRow('if / when / unless<br>+ present simple', [
+  ['present simple', 'If / When two people have got a lot in common, they normally get along.<br><span class="es">Si / Cuando dos personas tienen mucho en común, normalmente se llevan bien.</span>'],
+  ['modal + base form', "You can't participate in the course unless you apply for it.<br><span class=\"es\">No puedes participar en el curso a menos que te apuntes.</span>"]])}
+<tr class="band c-blue"><td colspan="3">First conditional</td></tr>
+${CRow('if / unless<br>+ present simple', [
+  ['future simple', 'If you take my advice, you will do better in the exam.<br><span class="es">Si sigues mi consejo, te irá mejor en el examen.</span>'],
+  ['imperative', 'If she takes you for granted, ignore her.<br><span class="es">Si te da por sentado, ignórala.</span>'],
+  ['modal + base form', 'You can join us if you are free tonight.<br><span class="es">Puedes unirte a nosotros si estás libre esta noche.</span>']])}
+<tr class="band c-violet"><td colspan="3">Second conditional</td></tr>
+${CRow('if / unless<br>+ past simple', [
+  ['would + base form', 'If Sarah and I had the money, we would buy a house.<br><span class="es">Si Sarah y yo tuviéramos el dinero, compraríamos una casa.</span>'],
+  ['could / might + base form', 'If you got to know each other, you could / might be friends.<br><span class="es">Si os conocierais, podríais ser amigos.</span>']])}
+<tr class="band c-pink"><td colspan="3">Third conditional</td></tr>
+${CRow('if<br>+ past perfect simple', [
+  ['would have + past participle', 'If you had apologised, I would have forgiven you.<br><span class="es">Si te hubieras disculpado, te habría perdonado.</span>'],
+  ['could / might have + past participle', "If we hadn't grown apart, we could / might have been close friends.<br><span class=\"es\">Si no nos hubiéramos distanciado, podríamos haber sido buenos amigos.</span>"]])}
+</tbody></table></div>` +
+H('When do we use each type?') +
+USES(
+  ['Zero: facts, general truths and rules', 'If you heat ice, it melts.', 'Si calientas el hielo, se derrite.'],
+  ['First: real or very possible situations in the future', "If it rains tomorrow, we'll stay at home.", 'Si llueve mañana, nos quedaremos en casa.'],
+  ['Second: unreal or unlikely situations in the present or future; advice', 'If I were you, I would talk to him.', 'Si yo fuera tú, hablaría con él.'],
+  ['Third: unreal situations in the past; regrets', "If I had studied, I would have passed.", 'Si hubiera estudiado, habría aprobado.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['unless', 'unless = if … not. Do not use a negative verb after unless', "Unless you hurry, you'll be late. (= If you don't hurry…) (A menos que te des prisa, llegarás tarde.)"],
+  ['No will after if', 'In the first conditional the if-clause uses the present simple, never will', 'If it rains, we will stay. (not: If it will rain) (Si llueve, nos quedaremos.)'],
+  ['were in the second conditional', 'With if we usually say were for all persons', 'If she were here, she would help us. (Si ella estuviera aquí, nos ayudaría.)'],
+  ['Mixed conditional', 'Past condition, present result: if + past perfect, would + base', "If I had taken the job, I would be rich now. (Si hubiera aceptado el trabajo, ahora sería rico.)"],
+  ['Comma', 'Comma only when if comes first', "If you call me, I'll come. / I'll come if you call me. (Si me llamas, iré. / Iré si me llamas.)"],
+  ['When in the zero conditional', 'when = every time', "When I am tired, I go to bed early. (Cuando estoy cansado, me acuesto pronto.)"]])
+}
+]});
+
+/* ---------- MODAL VERBS ---------- */
+GROUPS.push({ id: 'modals', name: 'Modal verbs', hue: 'blue', topics: [
+{ id: 'modal-verbs', title: 'Modal verbs', sub: 'Obligation, ability, possibility, advice and deduction',
+  task: 'Write 2 sentences for each of the 9 uses of modal verbs in this topic (18 sentences). Then write 3 sentences with the past or future forms of must, have to and can.',
+  html:
+LEAD('Modal verbs add meaning to the main verb: obligation, ability, permission, advice, possibility or deduction. For the past forms with <i>have + past participle</i> see PERFECT MODAL VERBS.') +
+H('Common characteristics') +
+UL('They have <b>no -s</b> in the third person: <i>She can swim.</i>', 'They are followed by the <b>base form</b> without <i>to</i> (exceptions: <i>ought to, have to, need to, be able to</i>).', 'They form negatives and questions <b>without do / does / did</b>: <i>Can you help? I can\'t go.</i>') +
+
+H('1. Obligation') +
+T(['Modal', 'Meaning', 'Past / future', 'Example'], [
+  ['<b>must</b>', 'The obligation comes from the speaker (from yourself)', 'No past or future tenses', 'You must pay for the ticket. (Debes pagar el billete.)'],
+  ['<b>have to</b>', 'Someone else forces you (rules, laws, other people)', 'Past: had to. Future: will have to', 'They have to find a solution to the problem as soon as possible. (Tienen que encontrar una solución al problema cuanto antes.)']]) +
+EX(['I had to wear a uniform at school.', 'En el colegio tenía que llevar uniforme.'], ['You will have to pay a fine.', 'Tendrás que pagar una multa.']) +
+
+H('2. Necessity') +
+T(['Modal', 'Example'], [['<b>need to</b>', 'I need to study more if I want to pass the exam. (Necesito estudiar más si quiero aprobar el examen.)']]) +
+
+H('3. Lack of necessity') +
+T(['Modal', 'Meaning', 'Example'], [
+  ['<b>don\'t have to</b>', 'It is not necessary, but you can', "You don't have to bring your books tomorrow. (No tienes que traer los libros mañana.)"],
+  ['<b>don\'t need to / needn\'t</b>', 'It is not necessary', "You don't need to eat five pieces of fruit every day, you can eat three or four. (No necesitas comer cinco piezas de fruta al día, puedes comer tres o cuatro.)"]]) +
+
+H('4. Prohibition') +
+T(['Modal', 'Example'], [
+  ['<b>mustn\'t</b>', "You mustn't park your car here. (No debes aparcar el coche aquí.)"],
+  ['<b>can\'t</b>', "You can't eat in class. (No puedes comer en clase.)"]]) +
+NOTE('<b>Mustn\'t is NOT the same as don\'t have to.</b>', [["You mustn't park here. (It is forbidden.)", 'No debes aparcar aquí. (Está prohibido.)'], ["You don't have to park here. (It isn't necessary.)", 'No tienes que aparcar aquí. (No es necesario.)']]) +
+
+H('5. Ability') +
+T(['Modal', 'Past / future', 'Example'], [
+  ['<b>can / can\'t</b>', 'Past: could / couldn\'t. Future: no (use will be able to)', 'She can play the guitar better than anyone I know. (Toca la guitarra mejor que nadie que conozco.)'],
+  ['<b>(not) be able to</b>', 'Past: was / were able to. Future: will be able to', 'She is able to speak four languages fluently. (Es capaz de hablar cuatro idiomas con fluidez.)']]) +
+NOTE('<b>Exception:</b> for a single achievement in the past we use <i>was / were able to</i>, not <i>could</i> (in affirmative sentences).', [['I was able to finish the test. (I finished it.)', 'Pude terminar el examen.'], ['I could swim when I was five. (a general ability)', 'Sabía nadar a los cinco años.']]) +
+
+H('6. Possibility') +
+T(['Modal', 'Example'], [
+  ['<b>can / could</b>', 'It can / could rain tomorrow. (Puede que llueva mañana.)'],
+  ['<b>may / might</b>', 'I may / might visit the Louvre museum when I\'m in Paris. (Puede que visite el museo del Louvre cuando esté en París.)']]) +
+
+H('7. Offers and permission') +
+T(['Modal', 'Example'], [
+  ['<b>can</b>', 'Can you help me, please? (¿Puedes ayudarme, por favor?)'],
+  ['<b>could / may</b> (polite)', 'May I come in, please? (¿Puedo pasar, por favor?)<br>Could you open the window, please? (¿Podría abrir la ventana, por favor?)']]) +
+
+H('8. Recommendations and advice') +
+T(['Modal', 'Example'], [
+  ['<b>should</b>', 'You should buy a new computer, this is really old and slow. (Deberías comprar un ordenador nuevo, este es muy viejo y lento.)'],
+  ['<b>ought to</b>', 'You ought to be more careful when driving. (Deberías tener más cuidado al conducir.)']]) +
+
+H('9. Deductions') +
+T(['Modal', 'Certainty', 'Example'], [
+  ['<b>must</b>', '90%–100% sure it is TRUE', 'Look at their house. They must be rich. (Mira su casa. Deben de ser ricos.)'],
+  ['<b>can\'t</b>', '90%–100% sure it is NOT TRUE', "He's just left. He can't be too far. (Se acaba de ir. No puede estar muy lejos.)"],
+  ['<b>may / might</b>', '30%–50% sure it is (or is not) true', "It's really early. She may not be home yet. (Es muy temprano. Puede que ella aún no esté en casa.)"]]) +
+
+H('Summary table') +
+T(['Use', 'Modals', 'Affirmative', 'Negative'], [
+  ['<b>Obligation</b>', 'must / have to', 'You must go.', "You don't have to go (no obligation)."],
+  ['<b>Necessity</b>', 'need to', 'I need to rest.', "I don't need to rest."],
+  ['<b>Lack of necessity</b>', "don't have to / needn't", '—', "You needn't come."],
+  ['<b>Prohibition</b>', "mustn't / can't", '—', "You mustn't smoke."],
+  ['<b>Ability</b>', 'can / be able to', 'She can swim.', "She can't swim."],
+  ['<b>Possibility</b>', 'can / could / may / might', 'It might snow.', 'It might not snow.'],
+  ['<b>Offers and permission</b>', 'can / could / may', 'May I sit here?', 'You may not leave.'],
+  ['<b>Advice</b>', 'should / ought to', 'You should rest.', "You shouldn't go."],
+  ['<b>Deduction</b>', "must / can't / may / might", 'He must be tired.', "He can't be tired."]])
+}
+]});
+
+/* ---------- PERFECT MODAL VERBS ---------- */
+GROUPS.push({ id: 'perfect-modals', name: 'Perfect modal verbs', hue: 'violet', topics: [
+{ id: 'perfect-modal-verbs', title: 'Perfect modal verbs', sub: 'Modal + have + past participle',
+  task: 'Write 2 sentences for each perfect modal in this topic: must have, can\'t have, might have, should have, could have, would have and needn\'t have.',
+  html:
+LEAD('Perfect modals talk about the <b>past</b>: what we think happened, what was possible, or what we regret.') +
+H('Form') +
+F('modal verb + have + past participle') +
+T(['', 'Example'], [
+  ['<b>Affirmative</b>', 'He must have found a job.'],
+  ['<b>Negative</b>', "He can't have bought that house."],
+  ['<b>Question</b>', 'Could she have missed the bus?']]) +
+H('Deductions about the past') +
+T(['Modal', 'Certainty', 'Example'], [
+  ['<b>must have</b>', '90%–100% sure it was TRUE', "He's gone to live in Paris, so he must have found a job there. (Se ha ido a vivir a París, así que debe de haber encontrado trabajo allí.)"],
+  ['<b>can\'t have / couldn\'t have</b>', '90%–100% sure that something is impossible', "He can't have bought that house. He hasn't got any money. (No puede haber comprado esa casa. No tiene dinero.)"],
+  ['<b>may have / might have</b>', '30%–50% sure it is (or is not) true', 'The new park might have been a good idea. (Puede que el parque nuevo haya sido una buena idea.)']]) +
+H('Criticism or regret') +
+T(['Modal', 'Example'], [
+  ['<b>should have + past participle</b>', 'We should have visited the cathedral. They say it\'s wonderful. (Deberíamos haber visitado la catedral. Dicen que es maravillosa.)'],
+  ['<b>ought to have + past participle</b>', 'I ought to have tried this food earlier, it\'s delicious! (Debería haber probado esta comida antes, ¡está deliciosa!)']]) +
+H('Possibility to have done something') +
+T(['Modal', 'Example'], [['<b>could have + past participle</b>', 'I could have studied in Madrid, but I decided to stay here. (Podría haber estudiado en Madrid, pero decidí quedarme aquí.)']]) +
+H('Willingness to do something') +
+T(['Modal', 'Example'], [['<b>would have + past participle</b>', "I would have eaten in that restaurant but he didn't want to go. (Habría comido en ese restaurante, pero él no quiso ir.)"]]) +
+H('Unnecessary past action') +
+T(['Modal', 'Example'], [['<b>needn\'t have + past participle</b>', "You needn't have walked to the shop. There is a bus that stops right there. (No hacía falta que fueras andando a la tienda. Hay un autobús que para ahí mismo.)"]]) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['can\'t have vs couldn\'t have', 'Both express impossibility in the past', "She can't have left. / She couldn't have left. (No puede haberse ido.)"],
+  ['needn\'t have vs didn\'t need to', "needn't have = you did it and it was unnecessary. didn't need to = it was not necessary (we don't know if you did it)", "I needn't have brought an umbrella. (I brought it.) / I didn't need to bring an umbrella. (No hacía falta traerlo.)"],
+  ['could have vs was able to', 'could have = did not happen; was able to = it happened', 'I could have helped, but nobody asked me. (Podría haber ayudado, pero nadie me lo pidió.)'],
+  ['Short answers', 'Only the modal and have', 'Did she miss the bus? She might have. (¿Perdió el autobús? Puede que sí.)']])
+}
+]});
+
+/* ---------- RELATIVE CLAUSES ---------- */
+GROUPS.push({ id: 'relative', name: 'Relative clauses', hue: 'teal', topics: [
+{ id: 'relative-who-which-that', title: 'Relative pronouns: who, which, that', sub: 'People, things and that',
+  task: 'Join 8 pairs of short sentences with who, which or that: four about people and four about things or animals.',
+  html:
+LEAD('Relative clauses give more information about a noun. The relative pronoun joins the two parts of the sentence.') +
+T(['Pronoun', 'Refers to', 'Example'], [
+  ['<b>who</b>', 'People', 'The woman who lives next door is a nurse. (La mujer que vive al lado es enfermera.)'],
+  ['<b>which</b>', 'Things and animals', 'The book which I bought is great. (El libro que compré es genial.)'],
+  ['<b>that</b>', 'People, things and animals', 'The dog that barks is mine. (El perro que ladra es mío.)']]) +
+NOTE('<b>Who</b> and <b>which</b> can be replaced by <b>that</b>.', [['I know a man who / that speaks five languages.', 'Conozco a un hombre que habla cinco idiomas.'], ['This is the phone which / that is on sale.', 'Este es el teléfono que está en oferta.']]) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['After all, everything, nothing, something', 'Use that', "Everything that glitters isn't gold. (No es oro todo lo que reluce.)"],
+  ['After a superlative', 'Use that', "It's the best film that I've seen. (Es la mejor película que he visto.)"],
+  ['Do not repeat the subject', 'The relative pronoun is the subject', 'The man who lives here is a teacher. (not: who he lives) (El hombre que vive aquí es profesor.)'],
+  ['With a preposition', 'The preposition can go at the end', "The girl who I talked to is Spanish. (La chica con la que hablé es española.)"]])
+},
+{ id: 'relative-omission', title: 'Omitting the relative pronoun', sub: 'When can we leave out who, which, that?',
+  task: 'Write 6 relative sentences: three where the pronoun can be omitted and three where it cannot. Underline the word after the pronoun that helped you decide.',
+  html:
+LEAD('<b>Who, which</b> and <b>that</b> can be omitted if they are followed by a <b>subject</b>. If they are followed by a <b>verb</b> they can never be omitted, because the relative pronoun is the subject of the relative clause.') +
+T(['What follows the pronoun', 'Function of the pronoun', 'Can we omit it?', 'Example'], [
+  ['A subject (I, she, the boy…)', 'Object', '<b>Yes</b>', 'The film (that) I saw was long. (La película que vi era larga.)'],
+  ['A verb (is, lives, won…)', 'Subject', '<b>No</b>', 'The film that won the prize was long. (La película que ganó el premio era larga.)']]) +
+EX(['The girl (who) I met is Spanish.', 'La chica que conocí es española.'], ['The girl who lives upstairs is Spanish.', 'La chica que vive arriba es española.'], ['This is the bag (which) I bought.', 'Este es el bolso que compré.']) +
+NOTE('<b>Trick:</b> look at the word right after the pronoun. A subject = you can delete the pronoun. A verb = keep it.') +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Non-defining clauses', 'The pronoun can NEVER be omitted', 'My brother, who lives in Madrid, is a doctor. (Mi hermano, que vive en Madrid, es médico.)'],
+  ['whose', 'Never omitted', 'The man whose car was stolen called the police. (El hombre cuyo coche fue robado llamó a la policía.)'],
+  ['With a preposition before the pronoun', 'Cannot be omitted (use whom / which)', 'The man to whom I spoke was kind. (El hombre con quien hablé era amable.)']])
+},
+{ id: 'relative-whose-when-where', title: 'Whose, when, where', sub: 'Possession, time and place',
+  task: 'Write 2 sentences with whose, 2 with when and 2 with where about people, years and places you know.',
+  html:
+LEAD('Besides who, which and that, there are other relative words with specific functions.') +
+T(['Word', 'Meaning', 'Structure', 'Example'], [
+  ['<b>whose</b>', 'cuyo / cuya / cuyos / cuyas', 'whose + noun', 'Tom is the boy whose father is a policeman. (Tom es el chico cuyo padre es policía.)'],
+  ['<b>when</b>', 'cuando (time)', 'time + when', 'That is the year when I got married. (Ese es el año en que me casé.)'],
+  ['<b>where</b>', 'donde (place)', 'place + where', 'That is the city where I live. (Esa es la ciudad donde vivo.)']]) +
+EX(['I have a friend whose brother plays for Real Madrid.', 'Tengo un amigo cuyo hermano juega en el Real Madrid.'], ['I remember the day when we met.', 'Recuerdo el día en que nos conocimos.'], ["That's the restaurant where we had dinner.", 'Ese es el restaurante donde cenamos.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['whose', 'Always followed by a noun; it replaces his / her / its / their', 'She is the woman whose bag was stolen. (Es la mujer a la que le robaron el bolso.)'],
+  ['when', 'Can be omitted or replaced by that', 'The day (when / that) we met was sunny. (El día en que nos conocimos hacía sol.)'],
+  ['where', 'Can be replaced by in which; cannot be omitted if the noun is place', "That's the house in which I was born. (Esa es la casa en la que nací.)"],
+  ['whose ≠ who\'s', 'who\'s = who is / who has', "Who's that? / The girl whose phone is ringing. (¿Quién es ese? / La chica cuyo teléfono está sonando.)"]])
+},
+{ id: 'relative-defining', title: 'Defining and non-defining clauses', sub: 'Essential or extra information',
+  task: 'Write 4 defining and 4 non-defining sentences about famous people or places. Put the commas where they belong.',
+  html:
+LEAD('<b>Defining</b> relative clauses give <b>essential</b> information. <b>Non-defining</b> clauses give <b>extra</b> information.') +
+T(['', 'Defining', 'Non-defining'], [
+  ['<b>Information</b>', 'Essential: without it we do not know who or what', 'Extra: the sentence makes sense without it'],
+  ['<b>Commas</b>', 'No commas', 'Commas (or pauses when speaking)'],
+  ['<b>That</b>', 'Can be used', '<b>Cannot</b> be used'],
+  ['<b>Omit the pronoun</b>', 'Yes, if it is the object', '<b>Never</b>'],
+  ['<b>Example</b>', 'The boy who is wearing a hat is my cousin. (El chico que lleva un sombrero es mi primo.)', 'My cousin, who is 15, lives in Madrid. (Mi primo, que tiene 15 años, vive en Madrid.)']]) +
+EX(['The shop that sells bread is closed.', 'La tienda que vende pan está cerrada.'], ['Granada, which is in the south of Spain, is beautiful.', 'Granada, que está en el sur de España, es preciosa.']) +
+H('Exceptions and special cases') +
+T(['Case', 'Rule', 'Example'], [
+  ['Which for a whole sentence', 'In non-defining clauses, which can refer to the whole idea before it', 'He passed the exam, which surprised everyone. (Aprobó el examen, lo cual sorprendió a todos.)'],
+  ['Proper names', 'Names are already specific, so the clause is non-defining', 'Paul, who lives next door, is a dentist. (Paul, que vive al lado, es dentista.)'],
+  ['Only one possible noun', 'Non-defining (with commas)', 'My mother, who is 50, works here. (Mi madre, que tiene 50 años, trabaja aquí.)']])
+}
+]});
+
+/* ---------- QUESTION TAGS ---------- */
+GROUPS.push({ id: 'tags', name: 'Question tags', hue: 'pink', topics: [
+{ id: 'question-tags', title: 'Question tags', sub: 'Short questions to confirm something',
+  task: 'Write 6 sentences of your own with their question tag: two affirmative, two negative and two special cases (I am, let\'s, imperative).',
+  html:
+LEAD('A question tag is a short question at the end of a sentence. We use it to <b>confirm</b> something or to ask the listener to <b>agree</b>.') +
+H('Basic rule') +
+T(['Sentence', 'Tag', 'Example'], [
+  ['Affirmative', 'negative', "You are tired, <b>aren't you?</b> (Estás cansado, ¿verdad?)"],
+  ['Negative', 'affirmative', "They weren't here, <b>were they?</b> (No estaban aquí, ¿verdad?)"]]) +
+UL('We repeat the <b>auxiliary or modal</b> of the sentence: <i>She can swim, can\'t she?</i> (Sabe nadar, ¿verdad?)', 'If there is no auxiliary, we use <b>do / does / did</b>: <i>You like it, don\'t you?</i> (Te gusta, ¿verdad?)', 'The tag uses a <b>pronoun</b>, not a noun: <i>Peter and Jenny want to be alone, don\'t they?</i> (Peter y Jenny quieren estar solos, ¿verdad?)') +
+H('Exceptions and special cases') +
+T(['Sentence', 'Tag', 'Example'], [
+  ['I am…', "<b>aren't I?</b>", "I'm such a good swimmer, aren't I? (Soy muy buen nadador, ¿verdad?)"],
+  ["Let's…", '<b>shall we?</b>', "Let's go to the cinema, shall we? (Vayamos al cine, ¿vale?)"],
+  ['Imperative / request', '<b>will you?</b>', 'Please pass me the sugar, will you? (Pásame el azúcar, ¿vale?)'],
+  ['There is / there are', "<b>is there? / isn't there?</b>", "There's nothing more to say, is there? (No hay nada más que decir, ¿verdad?)"],
+  ['Everyone, someone, nobody…', '<b>they</b>', "Everyone is ready, aren't they? (Todos están listos, ¿verdad?)"],
+  ['Nothing, everything, something', '<b>it</b>', 'Nothing surprises you, does it? (Nada te sorprende, ¿verdad?)'],
+  ['never, hardly, nobody, nothing (negative meaning)', '<b>affirmative</b> tag', 'She hardly said anything, did she? (Casi no dijo nada, ¿verdad?)'],
+  ["must / mustn't", "<b>must you? / mustn't you?</b>", "You mustn't play there, must you? (No debes jugar ahí, ¿verdad?)"],
+  ["needn't", '<b>need I?</b> (traditional) / <b>do I?</b>', "I needn't come with you, do I? (No hace falta que vaya contigo, ¿verdad?)"],
+  ['have as a normal verb', "<b>don't / doesn't</b>", "She has her hair styled, doesn't she? (Se hace peinar, ¿verdad?)"],
+  ['If-clause + main clause', 'tag of the <b>main clause</b>', "If we had more money, we would travel, wouldn't we? (Si tuviéramos más dinero, viajaríamos, ¿verdad?)"]]) +
+H('Intonation') +
+P('If the voice <b>goes up</b> on the tag, it is a real question. If it <b>goes down</b>, we are just asking for confirmation of something we already know.') +
+NOTE('The exercises with answers are in the LESSONS section.')
+}
+]});
+
+/* ---------- REPHRASING (content to be added) ---------- */
+GROUPS.push({ id: 'rephrasing', name: 'Rephrasing', hue: 'green', topics: [
+  ['rephrasing-tenses', 'Rephrasing: verb tenses'], ['rephrasing-conditionals', 'Rephrasing: conditional sentences'], ['rephrasing-modals', 'Rephrasing: modal verbs'],
+  ['rephrasing-passive', 'Rephrasing: the passive voice'], ['rephrasing-comparison', 'Rephrasing: comparatives and superlatives'], ['rephrasing-relative', 'Rephrasing: relative clauses']
+].map(x => ({ id: x[0], title: x[1], sub: 'Theory coming soon', soon: true, html: `<div class="slot"><b>The theory for this section is coming soon</b>This page is ready and will be filled in with the rephrasing theory.</div>` }))
+});
+/* ---------- IRREGULAR VERBS ---------- */
+/* v1 | ipa1 | v2 | ipa2 | v3 | ipa3 | Spanish */
+const IRR_RAW = `be|biː|was / were|wɒz/wɜː|been|biːn|ser, estar
+beat|biːt|beat|biːt|beaten|ˈbiːtn|golpear
+become|bɪˈkʌm|became|bɪˈkeɪm|become|bɪˈkʌm|llegar a ser, convertirse
+begin|bɪˈɡɪn|began|bɪˈɡæn|begun|bɪˈɡʌn|empezar
+bend|bend|bent|bent|bent|bent|doblar(se)
+bet|bet|bet|bet|bet|bet|apostar
+bite|baɪt|bit|bɪt|bitten|ˈbɪtn|morder
+bleed|bliːd|bled|bled|bled|bled|sangrar
+blow|bləʊ|blew|bluː|blown|bləʊn|soplar
+break|breɪk|broke|brəʊk|broken|ˈbrəʊkn|romper
+bring|brɪŋ|brought|brɔːt|brought|brɔːt|traer
+build|bɪld|built|bɪlt|built|bɪlt|construir
+burn|bɜːn|burnt / burned|bɜːnt/bɜːnd|burnt / burned|bɜːnt/bɜːnd|quemar
+burst|bɜːst|burst|bɜːst|burst|bɜːst|reventar, estallar
+buy|baɪ|bought|bɔːt|bought|bɔːt|comprar
+catch|kætʃ|caught|kɔːt|caught|kɔːt|coger, agarrar
+choose|tʃuːz|chose|tʃəʊz|chosen|ˈtʃəʊzn|elegir
+come|kʌm|came|keɪm|come|kʌm|venir
+cost|kɒst|cost|kɒst|cost|kɒst|costar
+cut|kʌt|cut|kʌt|cut|kʌt|cortar
+deal|diːl|dealt|delt|dealt|delt|comerciar, tratar
+dig|dɪɡ|dug|dʌɡ|dug|dʌɡ|cavar
+do|duː|did|dɪd|done|dʌn|hacer
+draw|drɔː|drew|druː|drawn|drɔːn|dibujar
+dream|driːm|dreamt / dreamed|dremt/driːmd|dreamt / dreamed|dremt/driːmd|soñar
+drink|drɪŋk|drank|dræŋk|drunk|drʌŋk|beber
+drive|draɪv|drove|drəʊv|driven|ˈdrɪvn|conducir
+eat|iːt|ate|eɪt|eaten|ˈiːtn|comer
+fall|fɔːl|fell|fel|fallen|ˈfɔːln|caer(se)
+feed|fiːd|fed|fed|fed|fed|alimentar
+feel|fiːl|felt|felt|felt|felt|sentir(se)
+fight|faɪt|fought|fɔːt|fought|fɔːt|luchar, pelear
+find|faɪnd|found|faʊnd|found|faʊnd|encontrar
+fly|flaɪ|flew|fluː|flown|fləʊn|volar
+forbid|fəˈbɪd|forbade|fəˈbeɪd|forbidden|fəˈbɪdn|prohibir
+forget|fəˈɡet|forgot|fəˈɡɒt|forgotten|fəˈɡɒtn|olvidar
+forgive|fəˈɡɪv|forgave|fəˈɡeɪv|forgiven|fəˈɡɪvn|perdonar
+freeze|friːz|froze|frəʊz|frozen|ˈfrəʊzn|congelar(se)
+get|ɡet|got|ɡɒt|got|ɡɒt|conseguir; llegar
+give|ɡɪv|gave|ɡeɪv|given|ˈɡɪvn|dar
+go|ɡəʊ|went|went|gone|ɡɒn|ir
+grow|ɡrəʊ|grew|ɡruː|grown|ɡrəʊn|crecer; cultivar
+hang|hæŋ|hung / hanged|hʌŋ/hæŋd|hung / hanged|hʌŋ/hæŋd|colgar
+have|hæv|had|hæd|had|hæd|tener; haber
+hear|hɪə|heard|hɜːd|heard|hɜːd|oír
+hide|haɪd|hid|hɪd|hidden|ˈhɪdn|esconder(se)
+hit|hɪt|hit|hɪt|hit|hɪt|golpear, pegar
+hold|həʊld|held|held|held|held|sujetar
+hurt|hɜːt|hurt|hɜːt|hurt|hɜːt|herir, hacer daño; doler
+keep|kiːp|kept|kept|kept|kept|guardar, mantener
+know|nəʊ|knew|njuː|known|nəʊn|saber, conocer
+lay|leɪ|laid|leɪd|laid|leɪd|poner; extender
+lead|liːd|led|led|led|led|guiar, conducir
+learn|lɜːn|learnt / learned|lɜːnt/lɜːnd|learnt / learned|lɜːnt/lɜːnd|aprender
+leave|liːv|left|left|left|left|dejar; irse, salir
+lend|lend|lent|lent|lent|lent|prestar
+let|let|let|let|let|let|permitir, dejar
+lie|laɪ|lay|leɪ|lain|leɪn|tumbarse, echarse
+lie (regular verb)|laɪ|lied|laɪd|lied|laɪd|mentir
+light|laɪt|lit|lɪt|lit|lɪt|encender
+lose|luːz|lost|lɒst|lost|lɒst|perder
+make|meɪk|made|meɪd|made|meɪd|hacer, fabricar
+mean|miːn|meant|ment|meant|ment|significar, querer decir
+meet|miːt|met|met|met|met|conocer a; quedar con
+overcome|ˌəʊvəˈkʌm|overcame|ˌəʊvəˈkeɪm|overcome|ˌəʊvəˈkʌm|superar
+pay|peɪ|paid|peɪd|paid|peɪd|pagar
+put|pʊt|put|pʊt|put|pʊt|poner
+quit|kwɪt|quit / quitted|kwɪt/ˈkwɪtɪd|quit / quitted|kwɪt/ˈkwɪtɪd|dejar (de)
+read|riːd|read|red|read|red|leer
+ride|raɪd|rode|rəʊd|ridden|ˈrɪdn|montar
+ring|rɪŋ|rang|ræŋ|rung|rʌŋ|llamar (por teléfono)
+rise|raɪz|rose|rəʊz|risen|ˈrɪzn|elevarse, alzarse
+run|rʌn|ran|ræn|run|rʌn|correr
+say|seɪ|said|sed|said|sed|decir
+see|siː|saw|sɔː|seen|siːn|ver
+sell|sel|sold|səʊld|sold|səʊld|vender
+send|send|sent|sent|sent|sent|enviar
+set|set|set|set|set|set|colocar
+sew|səʊ|sewed|səʊd|sewn|səʊn|coser
+shake|ʃeɪk|shook|ʃʊk|shaken|ˈʃeɪkn|agitar
+shine|ʃaɪn|shone|ʃɒn|shone|ʃɒn|brillar
+shoot|ʃuːt|shot|ʃɒt|shot|ʃɒt|disparar
+show|ʃəʊ|showed|ʃəʊd|shown|ʃəʊn|mostrar, enseñar
+shut|ʃʌt|shut|ʃʌt|shut|ʃʌt|cerrar
+sing|sɪŋ|sang|sæŋ|sung|sʌŋ|cantar
+sink|sɪŋk|sank|sæŋk|sunk|sʌŋk|hundirse
+sit|sɪt|sat|sæt|sat|sæt|sentarse
+sleep|sliːp|slept|slept|slept|slept|dormir
+smell|smel|smelt / smelled|smelt/smeld|smelt / smelled|smelt/smeld|oler
+speak|spiːk|spoke|spəʊk|spoken|ˈspəʊkn|hablar
+spell|spel|spelt / spelled|spelt/speld|spelt / spelled|spelt/speld|deletrear
+spend|spend|spent|spent|spent|spent|gastar; pasar (tiempo)
+spill|spɪl|spilt / spilled|spɪlt/spɪld|spilt / spilled|spɪlt/spɪld|derramar(se)
+spoil|spɔɪl|spoilt / spoiled|spɔɪlt/spɔɪld|spoilt / spoiled|spɔɪlt/spɔɪld|arruinar, estropear
+spread|spred|spread|spred|spread|spred|untar; difundir(se)
+spring|sprɪŋ|sprang|spræŋ|sprung|sprʌŋ|saltar
+stand|stænd|stood|stʊd|stood|stʊd|estar de pie
+steal|stiːl|stole|stəʊl|stolen|ˈstəʊln|robar
+stick|stɪk|stuck|stʌk|stuck|stʌk|pegar
+sting|stɪŋ|stung|stʌŋ|stung|stʌŋ|picar (insecto)
+swear|sweə|swore|swɔː|sworn|swɔːn|jurar
+sweep|swiːp|swept|swept|swept|swept|barrer
+swim|swɪm|swam|swæm|swum|swʌm|nadar
+take|teɪk|took|tʊk|taken|ˈteɪkn|coger; llevar
+teach|tiːtʃ|taught|tɔːt|taught|tɔːt|enseñar
+tear|teə|tore|tɔː|torn|tɔːn|romper, desgarrar
+tell|tel|told|təʊld|told|təʊld|decir, contar
+think|θɪŋk|thought|θɔːt|thought|θɔːt|pensar
+throw|θrəʊ|threw|θruː|thrown|θrəʊn|tirar; lanzar
+understand|ˌʌndəˈstænd|understood|ˌʌndəˈstʊd|understood|ˌʌndəˈstʊd|comprender, entender
+wake up|ˈweɪk ʌp|woke up|ˈwəʊk ʌp|woken up|ˈwəʊkn ʌp|despertar(se)
+wear|weə|wore|wɔː|worn|wɔːn|llevar puesto; ponerse
+win|wɪn|won|wʌn|won|wʌn|ganar
+write|raɪt|wrote|rəʊt|written|ˈrɪtn|escribir`;
+const IRR = IRR_RAW.split('\n').map(l => { const a = l.split('|'); return { v1: a[0], p1: a[1], v2: a[2], p2: a[3], v3: a[4], p3: a[5], es: a[6] }; });
+
+GROUPS.push({ id: 'irregular', name: 'Irregular verbs', hue: 'orange', topics: [
+{ id: 'irregular-verbs', title: 'Irregular verbs', sub: 'The complete list and a practice challenge', custom: 'irregular',
+  task: 'Choose 15 verbs from the list that you did not know. Write one sentence in the past simple and one in the present perfect with each of them.',
+  html: '' }
+]});
+
+/* order of groups in the theory section */
+const ORDER = ['irregular', 'basics', 'comparison', 'tenses', 'gerund-infinitive', 'passive', 'conditionals', 'modals', 'perfect-modals', 'relative', 'tags', 'rephrasing'];
+GROUPS.sort((a, b) => ORDER.indexOf(a.id) - ORDER.indexOf(b.id));
+/* ---------- EXAMS ---------- */
+const bub = (...l) => `<span class="bubs" aria-label="Options ${l.join(', ')}">${l.map(x => `<i>${x}</i>`).join('')}</span>`;
+
+const PAPERS = [
+{ id: 'reading', name: 'Reading', hue: 'blue', time: 'about 45 min (1 h 30 min with Writing)', qs: '32 questions', weight: '25%',
+  intro: 'Six parts with texts that get longer and harder. It tests whether you understand short messages, informative texts and grammar in context.',
+  parts: [
+    { n: 1, q: 5, type: 'Multiple choice', opts: ['A', 'B', 'C'], what: 'Five short real-world texts (signs, messages, emails, adverts). You choose what each one means.', tip: 'Check who writes, to whom and why. Reject options that repeat words from the text but change the meaning.' },
+    { n: 2, q: 5, type: 'Matching', opts: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'], what: 'Five people with specific needs and eight short texts on the same topic. You match each person to the right text.', tip: 'Underline each person\'s requirements. There is always at least one extra option.' },
+    { n: 3, q: 5, type: 'Multiple choice', opts: ['A', 'B', 'C', 'D'], what: 'One long text (article, story, letter) with five four-option questions. It tests detail, opinion and attitude.', tip: 'The questions follow the order of the text. Find the paragraph before you choose.' },
+    { n: 4, q: 5, type: 'Gapped text (sentences)', opts: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'], what: 'A text with five missing sentences and eight sentences to choose from. It tests cohesion and coherence.', tip: 'Look for pronouns, linking words and time references before and after each gap.' },
+    { n: 5, q: 6, type: 'Multiple-choice cloze', opts: ['A', 'B', 'C', 'D'], what: 'A text with six gaps and four possible words for each. It tests vocabulary and grammar: prepositions, verbs, linkers.', tip: 'Read the whole sentence. Many answers depend on the word just before or after the gap.' },
+    { n: 6, q: 6, type: 'Open cloze', opts: [], what: 'A text with six gaps to fill with <b>one word</b> each, usually a grammar word (articles, auxiliaries, prepositions, pronouns).', tip: 'It is almost always a function word. Check your spelling: a misspelt word does not score.' }
+  ] },
+{ id: 'listening', name: 'Listening', hue: 'orange', time: 'about 30 min', qs: '25 questions', weight: '25%',
+  intro: 'Four parts with recordings you hear twice. You have time to read the questions before each part.',
+  parts: [
+    { n: 1, q: 7, type: 'Multiple choice with pictures', opts: ['A', 'B', 'C'], what: 'Seven short conversations or monologues. You choose the right picture out of three.', tip: 'Before listening, look at the three pictures and think of the key words for each.' },
+    { n: 2, q: 6, type: 'Multiple choice', opts: ['A', 'B', 'C'], what: 'A longer monologue or interview with six three-option questions.', tip: 'All three options often appear in the audio. Listen for the one that really answers the question.' },
+    { n: 3, q: 6, type: 'Gap fill', opts: [], what: 'A monologue with incomplete notes or sentences. You write one or two words, or a number, in each gap.', tip: 'Think about what kind of information is missing (name, price, time). Write exactly what you hear.' },
+    { n: 4, q: 6, type: 'Yes / No', opts: ['Yes', 'No'], what: 'An informal conversation between two people. You decide whether each statement is correct (Yes) or not (No).', tip: 'Pay attention to each speaker\'s opinion. A statement can be true for one speaker and false for the other.' }
+  ] },
+{ id: 'writing', name: 'Writing', hue: 'green', time: 'about 45 min (1 h 30 min with Reading)', qs: '2 tasks', weight: '25%',
+  intro: 'Two tasks of about 100 words each. The first is compulsory and the second is a choice between two options.',
+  parts: [
+    { n: 1, q: 1, type: 'Email or message', opts: [], what: 'You reply to an email or message from a friend. There are notes you must develop (about four). Around 100 words. It is <b>compulsory</b>.', tip: 'Cover every note, keep an informal tone and use email openings and closings (Hi…, Write soon).' },
+    { n: 2, q: 1, type: 'Article or story', opts: [], what: 'You choose between writing an <b>article</b> or a <b>story</b>. Around 100 words.', tip: 'Choose the format where you have more vocabulary. In a story use past tenses and sequence words (then, after that, suddenly).' }
+  ],
+  extra: 'Each task is marked from 0 to 5 on four criteria: <b>content</b>, <b>communicative achievement</b>, <b>organisation</b> and <b>language</b>.' },
+{ id: 'speaking', name: 'Speaking', hue: 'pink', time: 'about 12 min per pair', qs: '4 parts', weight: '25%',
+  intro: 'It is done in pairs with two examiners: one talks to you and the other assesses. You speak to your partner and to the examiner.',
+  parts: [
+    { n: 1, q: 0, type: 'Interview', opts: [], time: '2–3 min', what: 'The examiner asks you about yourself: name, family, routine, likes, plans.', tip: 'Give full answers, not just &ldquo;yes&rdquo; or &ldquo;no&rdquo;. Add one detail.' },
+    { n: 2, q: 0, type: 'Simulated situation', opts: [], time: '2–3 min', what: 'With your partner you discuss a situation (organising a party, choosing a gift) using pictures to help you.', tip: 'Make suggestions, ask your partner\'s opinion and reach a decision: What about…? Why don\'t we…?' },
+    { n: 3, q: 0, type: 'Individual long turn', opts: [], time: '3 min', what: 'You describe a colour photograph for about one minute.', tip: 'Say where it is, who is in it and what they are doing. If you do not know a word, explain it with other words.' },
+    { n: 4, q: 0, type: 'Discussion', opts: [], time: '3 min', what: 'You talk with your partner about the topic of the photograph: likes, experiences and opinions.', tip: 'React to what your partner says and invite them to continue: What do you think?' }
+  ] }
+];
+
+const SCALE = [
+  ['160 – 170', 'Level B2', 'Performance above B1'],
+  ['140 – 159', 'Level B1', 'Pass: B1 certificate'],
+  ['120 – 139', 'Level A2', 'A2 certificate']
+];
+
+/* ---------- ACTIVITIES (translation ES→EN and gap fill) ---------- */
+/* tr: [Spanish, 'answer 1|answer 2|…']   gaps: ['sentence with ___', 'answer 1|answer 2'] */
+const ACT = {
+'present-simple': {
+  tr: [['Me levanto a las siete todos los días.', 'I get up at seven every day|I get up at 7 every day|Every day I get up at seven'], ['Ella no trabaja los domingos.', "She doesn't work on Sundays|She doesn't work on Sunday"], ['¿A qué hora empieza la película?', 'What time does the film start?|What time does the movie start?|What time does the film begin?'], ['Mi hermano siempre llega tarde.', 'My brother always arrives late|My brother always comes late'], ['El agua hierve a 100 grados.', 'Water boils at 100 degrees|Water boils at one hundred degrees|The water boils at 100 degrees']],
+  gaps: [['My sister ___ (live) in London.', 'lives'], ["They ___ (not / like) horror films.", "don't like"], ['___ she speak French? (do)', 'does'], ['He ___ (study) every evening.', 'studies'], ['We usually ___ (go) to the beach in summer.', 'go'], ['She ___ (watch) TV after dinner.', 'watches']] },
+'present-continuous': {
+  tr: [['Estoy estudiando inglés ahora.', "I am studying English now|I am studying English right now"], ['¿Qué estás haciendo?', 'What are you doing?'], ['Ellos no están viendo la tele.', "They aren't watching TV|They aren't watching television|They are not watching TV"], ['Este mes estoy viviendo con mis abuelos.', 'I am living with my grandparents this month|This month I am living with my grandparents'], ['Mañana quedo con Ana a las seis.', "I am meeting Ana at six tomorrow|Tomorrow I am meeting Ana at six|I am meeting Ana tomorrow at six"]],
+  gaps: [['Look! It ___ (rain).', 'is raining'], ["She ___ (not / work) today.", "isn't working"], ['Why ___ you laughing? (be)', 'are'], ['I ___ (read) a great book at the moment.', 'am reading'], ['The children ___ (play) in the garden now.', 'are playing'], ['He ___ (always / lose) his keys!', 'is always losing']] },
+'present-perfect': {
+  tr: [['¿Has estado alguna vez en Londres?', 'Have you ever been to London?'], ['Acabo de terminar mis deberes.', 'I have just finished my homework'], ['Vivo aquí desde 2015.', 'I have lived here since 2015'], ['Todavía no ha llegado.', "He hasn't arrived yet|She hasn't arrived yet|He still hasn't arrived|She still hasn't arrived"], ['Nunca hemos visto esa película.', "We have never seen that film|We have never seen that movie"]],
+  gaps: [['I ___ (never / be) to Italy.', 'have never been'], ['She ___ (already / finish) her work.', 'has already finished'], ['We ___ (know) each other for ten years.', 'have known'], ['Have you ever ___ (eat) sushi?', 'eaten'], ['He ___ (live) here since 2020.', 'has lived'], ["They haven't called ___ (yet / already).", 'yet']] },
+'present-perfect-continuous': {
+  tr: [['Llevo tres horas estudiando.', 'I have been studying for three hours'], ['¿Cuánto tiempo llevas esperando?', 'How long have you been waiting?'], ['Ella ha estado trabajando todo el día.', 'She has been working all day'], ['Estás sucio. ¿Has estado jugando al fútbol?', "You are dirty. Have you been playing football?|You are dirty. Have you been playing soccer?"], ['No hemos estado durmiendo bien últimamente.', "We haven't been sleeping well lately|We haven't been sleeping well recently"]],
+  gaps: [["I ___ (wait) for you since eight o'clock.", 'have been waiting'], ['She ___ (study) all morning.', 'has been studying'], ['They ___ (learn) English for two years.', 'have been learning'], ['He ___ (not / sleep) well lately.', "hasn't been sleeping"], ['Why are you so tired? Have you ___ (work) too much?', 'been working'], ['It ___ (rain) all day.', 'has been raining']] },
+'past-simple': {
+  tr: [['Ayer visitamos a mi abuela.', 'We visited my grandmother yesterday|Yesterday we visited my grandmother'], ['No fui a la fiesta.', "I didn't go to the party"], ['¿Qué hiciste el sábado?', 'What did you do on Saturday?|What did you do last Saturday?'], ['Ella compró un coche nuevo hace dos años.', 'She bought a new car two years ago'], ['Llegué a casa, cené y me acosté.', 'I got home, had dinner and went to bed|I arrived home, had dinner and went to bed']],
+  gaps: [['We ___ (go) to Paris last summer.', 'went'], ["She ___ (not / see) the film.", "didn't see"], ['Did he ___ (buy) a new phone?', 'buy'], ['I ___ (be) at home yesterday.', 'was'], ['They ___ (play) football on Sunday.', 'played'], ['He ___ (study) all night.', 'studied']] },
+'past-continuous': {
+  tr: [['Ayer a las ocho estaba cenando.', "I was having dinner at eight yesterday|Yesterday at eight I was having dinner|At eight o'clock yesterday I was having dinner"], ['Llovía cuando salí de casa.', 'It was raining when I left home|It was raining when I left the house'], ['Mientras ella cocinaba, él veía la tele.', 'While she was cooking, he was watching TV|While she was cooking, he was watching television'], ['¿Qué estabas haciendo a las diez?', "What were you doing at ten?|What were you doing at ten o'clock?"], ['No estábamos durmiendo cuando sonó el teléfono.', "We weren't sleeping when the phone rang"]],
+  gaps: [['At nine last night I ___ (watch) TV.', 'was watching'], ["They ___ (not / listen) to the teacher.", "weren't listening"], ['She was reading when the phone ___ (ring).', 'rang'], ['While I ___ (walk) home, it started to rain.', 'was walking'], ['___ you sleeping at midnight? (be)', 'were'], ['He ___ (always / complain) about the food.', 'was always complaining']] },
+'past-perfect': {
+  tr: [['Cuando llegué, la película ya había empezado.', 'When I arrived, the film had already started|When I arrived, the movie had already started|When I arrived, the film had already begun'], ['Ella estaba triste porque había perdido el móvil.', 'She was sad because she had lost her phone|She was sad because she had lost her mobile'], ['Nunca había visto nieve antes.', 'I had never seen snow before'], ['Después de que comimos, dimos un paseo.', 'After we had eaten, we went for a walk|After we ate, we went for a walk'], ['No habían terminado cuando llegamos.', "They hadn't finished when we arrived"]],
+  gaps: [['When we arrived, they ___ (leave).', 'had left'], ["She ___ (not / study) before the exam.", "hadn't studied"], ['I was late because I ___ (miss) the bus.', 'had missed'], ['By the time he called, I ___ (already / go) to bed.', 'had already gone'], ['___ they eaten before you arrived? (have)', 'had'], ['After he ___ (finish) his work, he went home.', 'had finished']] },
+'past-perfect-continuous': {
+  tr: [['Llevábamos dos horas esperando cuando llegó.', 'We had been waiting for two hours when he arrived|We had been waiting for two hours when she arrived'], ['Estaba cansada porque había estado estudiando toda la noche.', 'She was tired because she had been studying all night'], ['El suelo estaba mojado. Había estado lloviendo.', 'The ground was wet. It had been raining|The floor was wet. It had been raining'], ['¿Cuánto tiempo llevaba esperando?', 'How long had he been waiting?|How long had she been waiting?'], ['No habíamos estado trabajando mucho.', "We hadn't been working much|We hadn't been working a lot"]],
+  gaps: [['She ___ (cry), so her eyes were red.', 'had been crying'], ['They ___ (play) for an hour when it started to rain.', 'had been playing'], ["I ___ (not / sleep) well, so I felt terrible.", "hadn't been sleeping"], ['He ___ (work) there for ten years before he left.', 'had been working'], ['The children were dirty because they ___ (play) in the mud.', 'had been playing'], ['We ___ (wait) for ages when the bus finally came.', 'had been waiting']] },
+'static-verbs': {
+  gaps: [['I ___ (know) the answer.', 'know'], ['She ___ (not / understand) this exercise.', "doesn't understand"], ['This bag ___ (belong) to Tom.', 'belongs'], ["I'm busy. I ___ (have) lunch right now. (eating)", 'am having'], ['I ___ (think) this film is great. (opinion)', 'think'], ['He ___ (want) a coffee now.', 'wants']] },
+'present-simple-vs-continuous': {
+  tr: [['Normalmente bebe té, pero hoy está bebiendo café.', 'He usually drinks tea, but today he is drinking coffee|She usually drinks tea, but today she is drinking coffee'], ['Juego al tenis los sábados.', 'I play tennis on Saturdays'], ['¡Mira! El lago se está congelando.', 'Look! The lake is freezing'], ['Ella trabaja en un banco, pero este mes trabaja en una tienda.', 'She works in a bank, but this month she is working in a shop|She works in a bank, but this month she is working in a store'], ['Quiero un café ahora.', 'I want a coffee now|I want a cup of coffee now']],
+  gaps: [['I normally ___ (drive) to work.', 'drive'], ['Be quiet! The baby ___ (sleep).', 'is sleeping'], ["She ___ (not / eat) meat. She's vegetarian.", "doesn't eat"], ['Look! They ___ (dance).', 'are dancing'], ['I ___ (know) the answer.', 'know'], ['Water ___ (boil) at 100 degrees.', 'boils']] },
+'used-to': {
+  tr: [['Antes vivíamos en el campo.', 'We used to live in the countryside|We used to live in the country'], ['Ella no solía comer verduras.', "She didn't use to eat vegetables"], ['¿Solías jugar al fútbol de pequeño?', 'Did you use to play football when you were a child?|Did you use to play football as a child?|Did you use to play soccer when you were a child?'], ['Antes había un cine aquí.', 'There used to be a cinema here|There used to be a movie theater here'], ['Mi abuelo solía contarnos historias.', 'My grandfather used to tell us stories|My grandpa used to tell us stories']],
+  gaps: [['I ___ (play) the piano when I was a child.', 'used to play'], ["She ___ (not / like) coffee, but now she loves it.", "didn't use to like"], ['___ you use to live here? (do)', 'did'], ['There ___ (be) a lake here.', 'used to be'], ['We ___ (go) to the beach every summer.', 'used to go'], ["He didn't ___ to wear glasses.", 'use']] },
+'past-simple-vs-continuous': {
+  tr: [['Veía la tele cuando sonó el teléfono.', 'I was watching TV when the phone rang|I was watching television when the phone rang'], ['Mientras caminaba a casa, vio un accidente.', 'While she was walking home, she saw an accident|While he was walking home, he saw an accident'], ['Se quedó dormido mientras leía.', 'He fell asleep while he was reading|She fell asleep while she was reading'], ['Cuando llegué, estaban cenando.', 'When I arrived, they were having dinner|When I arrived, they were eating dinner'], ['Nos conocimos cuando estudiábamos en Londres.', 'We met when we were studying in London']],
+  gaps: [['I ___ (walk) home when it started to rain.', 'was walking'], ['While we ___ (eat), the lights went out.', 'were eating'], ['She ___ (see) an accident while she was driving.', 'saw'], ['He ___ (sleep) when the alarm rang.', 'was sleeping'], ['What ___ you doing when I called? (be)', 'were'], ['When I arrived, she ___ (talk) on the phone.', 'was talking']] },
+'will': {
+  tr: [['Tengo hambre. Me haré un bocadillo.', "I am hungry. I will make a sandwich|I am hungry. I will make myself a sandwich"], ['Creo que aprobará el examen.', 'I think she will pass the exam|I think he will pass the exam|I think he will pass the test'], ['Te prometo que te llamaré.', 'I promise I will call you|I promise I will phone you'], ['No se lo diré a nadie.', "I won't tell anyone|I won't tell anybody"], ['¿Me ayudarás mañana?', 'Will you help me tomorrow?']],
+  gaps: [["It's cold. I ___ (close) the window.", 'will close'], ['I think it ___ (rain) tomorrow.', 'will rain'], ['She ___ (not / come) to the party.', "won't come"], ['___ you help me, please? (will)', 'will'], ['I promise I ___ (not / tell) anyone.', "won't tell"], ['We ___ (see) you next week.', 'will see']] },
+'future-continuous': {
+  tr: [['Mañana a esta hora estaré volando a Roma.', 'This time tomorrow I will be flying to Rome|At this time tomorrow I will be flying to Rome|Tomorrow at this time I will be flying to Rome'], ['No llames a las ocho. Estaremos cenando.', "Don't call at eight. We will be having dinner|Don't phone at eight. We will be having dinner"], ['¿Vas a usar el coche esta noche?', 'Will you be using the car tonight?|Will you be using the car this evening?'], ['El lunes por la mañana estaré trabajando.', 'I will be working on Monday morning|On Monday morning I will be working'], ['Ella no estará durmiendo a las doce.', "She won't be sleeping at twelve|She won't be sleeping at midnight"]],
+  gaps: [['This time next week I ___ (lie) on a beach.', 'will be lying'], ["Don't call at 9. I ___ (work).", 'will be working'], ['Will you ___ (use) the computer tonight?', 'be using'], ['At noon tomorrow we ___ (travel) to Madrid.', 'will be travelling|will be traveling'], ["They ___ (not / sleep) at midnight.", "won't be sleeping"], ['She ___ (study) while we are at the cinema.', 'will be studying']] },
+'going-to': {
+  tr: [['Voy a aprender guitarra este año.', "I am going to learn the guitar this year|I am going to learn to play the guitar this year"], ['Mira esas nubes. Va a llover.', 'Look at those clouds. It is going to rain'], ['¿Qué vas a hacer este fin de semana?', 'What are you going to do this weekend?|What are you going to do at the weekend?'], ['No vamos a viajar este verano.', "We aren't going to travel this summer"], ['Cuidado, te vas a caer.', 'Be careful, you are going to fall|Careful! You are going to fall']],
+  gaps: [['I ___ (study) medicine next year.', 'am going to study'], ['Look at the sky! It ___ (snow).', 'is going to snow'], ["She ___ (not / buy) a new car.", "isn't going to buy"], ['___ you going to call him? (be)', 'are'], ['They ___ (get) married in June.', 'are going to get'], ["We ___ (not / go) out tonight.", "aren't going to go"]] },
+'will-vs-going-to': {
+  tr: [['Suena el teléfono. Yo lo cojo.', 'The phone is ringing. I will answer it|The phone is ringing. I will get it'], ['He decidido que voy a estudiar medicina.', 'I have decided I am going to study medicine|I have decided that I am going to study medicine'], ['Creo que será una gran fiesta.', 'I think it will be a great party'], ['Mira esos coches. Van a chocar.', 'Look at those cars. They are going to crash|Look at those cars. They are going to hit each other'], ['Te ayudaré con las maletas.', 'I will help you with the suitcases|I will help you with the bags']],
+  gaps: [["— I'm thirsty. — I ___ (get) you some water.", 'will get'], ["I've bought the tickets. We ___ (visit) Paris in May.", 'are going to visit'], ['Look at the clouds! It ___ (rain).', 'is going to rain'], ['I think Spain ___ (win) the match.', 'will win'], ['She has decided. She ___ (be) a doctor.', 'is going to be'], ["Don't worry. I ___ (not / tell) anyone.", "won't tell"]] },
+'present-continuous-future': {
+  tr: [['El viernes vuelo a Roma.', 'I am flying to Rome on Friday|On Friday I am flying to Rome'], ['¿Qué haces este fin de semana?', 'What are you doing this weekend?|What are you doing at the weekend?'], ['Mis padres vienen a cenar esta noche.', 'My parents are coming for dinner tonight|My parents are coming to dinner tonight|My parents are coming over for dinner tonight'], ['No trabajo el lunes.', "I am not working on Monday|I'm not working on Monday"], ['La película empieza a las ocho.', 'The film starts at eight|The movie starts at eight|The film begins at eight']],
+  gaps: [['I ___ (meet) my teacher tomorrow at five.', 'am meeting'], ['They ___ (fly) to Madrid on Friday.', 'are flying'], ["She ___ (not / work) next week.", "isn't working"], ['The train ___ (leave) at 9.15. (timetable)', 'leaves'], ['We ___ (have) dinner with friends tonight.', 'are having'], ['___ you coming to the party? (be)', 'are']] },
+'conditional-sentences': {
+  tr: [['Si llueve mañana, nos quedaremos en casa.', 'If it rains tomorrow, we will stay at home'], ['Si tuviera dinero, compraría una casa.', 'If I had money, I would buy a house|If I had the money, I would buy a house'], ['Si hubieras estudiado, habrías aprobado.', 'If you had studied, you would have passed'], ['Si calientas el hielo, se derrite.', 'If you heat ice, it melts|If you heat the ice, it melts'], ['No puedes entrar a menos que tengas una entrada.', "You can't enter unless you have a ticket|You can't come in unless you have a ticket"]],
+  gaps: [['If you heat ice, it ___ (melt).', 'melts'], ['If it rains tomorrow, we ___ (stay) at home.', 'will stay'], ['If I ___ (win) the lottery, I would travel the world.', 'won'], ['If we had left earlier, we ___ (not / miss) the train.', "wouldn't have missed"], ["___ you hurry, you'll be late. (if / unless)", 'unless'], ['If I ___ (be) you, I would talk to him.', 'were']] },
+'modal-verbs': {
+  tr: [['Debes pagar el billete.', 'You must pay for the ticket'], ['No tienes que traer los libros mañana.', "You don't have to bring your books tomorrow|You don't have to bring the books tomorrow"], ['Deberías comprar un ordenador nuevo.', 'You should buy a new computer'], ['Ayer tuve que trabajar.', 'I had to work yesterday|Yesterday I had to work'], ['No puedes comer en clase.', "You can't eat in class"]],
+  gaps: [["You ___ park here. It's forbidden.", "mustn't|can't"], ["You ___ bring your books. It isn't necessary.", "don't have to|needn't|don't need to"], ['She ___ play the guitar very well. (ability)', 'can'], ["You ___ see a doctor. It's good advice.", 'should|ought to'], ["He's just left. He ___ be far.", "can't"], ['Look at their house! They ___ be rich.', 'must']] },
+'perfect-modal-verbs': {
+  tr: [['Debe de haber encontrado trabajo allí.', 'He must have found a job there|She must have found a job there'], ['No puede haber comprado esa casa.', "He can't have bought that house|She can't have bought that house|He couldn't have bought that house"], ['Deberíamos haber visitado la catedral.', 'We should have visited the cathedral'], ['Podría haber estudiado en Madrid.', 'I could have studied in Madrid'], ['No hacía falta que fueras andando.', "You needn't have walked|You needn't have walked there"]],
+  gaps: [['He has gone to Paris, so he ___ have found a job.', 'must'], ["She ___ have bought that house. She hasn't got any money.", "can't|couldn't"], ['We ___ have visited the cathedral. It was wonderful!', 'should|ought to'], ['I ___ have studied in Madrid, but I stayed here.', 'could'], ['You ___ have walked to the shop. There was a bus.', "needn't"], ["It's late. She ___ have missed the bus.", 'might|may|could']] },
+'passive-voice': {
+  tr: [['La mesa fue montada por Phil.', 'The table was assembled by Phil|The table was put together by Phil'], ['Me robaron la bici anoche.', 'My bike was stolen last night|My bicycle was stolen last night'], ['Están arreglando la carretera.', 'The road is being repaired|The road is being fixed'], ['Se cree que mintió en el juicio.', 'It is believed that he lied in court|He is believed to have lied in court'], ['Me limpian la casa una vez por semana.', 'I have my house cleaned once a week|I get my house cleaned once a week']],
+  gaps: [['The customers ___ (serve) by the waiter.', 'are served'], ['The window ___ (break) yesterday.', 'was broken'], ['The room ___ (clean) at the moment.', 'is being cleaned'], ['The letters have already ___ (send).', 'been sent'], ['English ___ (speak) all over the world.', 'is spoken'], ['The house ___ (build) in 1990.', 'was built']] },
+'gerund-infinitive': {
+  gaps: [['She has finished ___ (write) her essay.', 'writing'], ['We decided ___ (join) a yoga class.', 'to join'], ['He apologised for ___ (be) late.', 'being'], ["I'm looking forward to ___ (see) you.", 'seeing'], ['They were lucky ___ (win) the lottery.', 'to win'], ['She stopped ___ (smoke) last year.', 'smoking']] }
+};
+/* ---------- exercise data (question tags) ---------- */
+const QT1 = [
+["You're addicted to shopping, ______?", "aren't you"], ["They weren't part of the regular team, ______?", "were they"],
+["You can't give it back to the owner, ______?", "can you"], ["Let's take a day off tomorrow, ______?", "shall we"],
+["She has her hair styled every week, ______?", "doesn't she"], ["Mum will be happy to see you, ______?", "won't she"],
+["John keeps talking all the time. That's disgusting, ______?", "isn't it"], ["They haven't ever bought a new car, ______?", "have they"],
+["I'm such a good swimmer, ______?", "aren't I"], ["He wouldn't agree with you, ______?", "would he"],
+["There's really nothing more to say, ______?", "is there"], ["I shouldn't criticise the teacher, ______?", "should I"],
+["Please pass me the sugar, ______?", "will you"], ["You mustn't play on the freshly cut grass, ______?", "must you"],
+["You don't want him to come with us, ______?", "do you"], ["She hardly said anything, ______?", "did she"],
+["You do have a receipt, ______?", "don't you"], ["Peter and Jenny want to be alone, ______?", "don't they"],
+["You weren't ill last week, ______?", "were you"], ["I needn't come with you, ______?", "do I|need I"],
+["I didn't have a chance to thank you, ______?", "did I"], ["You had the car repaired, ______?", "didn't you"],
+["She never met anyone else, ______?", "did she"], ["Let's go to the cinema, ______?", "shall we"],
+["They could make it to the train in time, ______?", "couldn't they"], ["Dad won't be with us next week, ______?", "will he"],
+["If we had more money, we would travel a lot, ______?", "wouldn't we"], ["You have lunch with your family on Sundays, ______?", "don't you"],
+["It got very late yesterday, ______?", "didn't it"], ["I am not going to have to tell you again, ______?", "am I"]
+];
+const QT2 = [
+["Everyone's ready to go, ______?", "aren't they"], ["Let's be reasonable, ______?", "shall we"], ["There's no place like home, ______?", "is there"],
+["Alan never took his work seriously, ______?", "did he"], ["Patricia hardly said a word, ______?", "did she"], ["Nobody has seen my wallet, ______?", "have they"],
+["Everyone has secrets, ______?", "don't they"], ["That's such a shame, ______?", "isn't it"], ["Nothing surprises you anymore, ______?", "does it"],
+["Nearly everyone came to the meeting, ______?", "didn't they"], ["I'm being silly, ______?", "aren't I"], ["Someone knocked at the door, ______?", "didn't they"],
+["Let's try again, ______?", "shall we"], ["Everything is just perfect, ______?", "isn't it"], ["It's no use, ______?", "is it"], ["This was a total waste of time, ______?", "wasn't it"]
+];
+const EXAMS = { reading: [], listening: [], writing: [], speaking: [] };
+
+function getExercise(key) {
+  if (key === 'qtags-1') return { kind: 'gap', title: 'Question tags: complete the sentences', items: QT1.map(x => ({ q: x[0], a: x[1] })) };
+  if (key === 'qtags-2') return { kind: 'gap', title: 'Advanced question tags', items: QT2.map(x => ({ q: x[0], a: x[1] })) };
+  const [kind, id] = key.split(':');
+  if (kind === 'tr') return { kind: 'tr', title: 'Translate into English', items: ACT[id].tr.map(x => ({ q: x[0], a: x[1] })) };
+  return { kind: 'gap', title: 'Fill in the gaps', items: ACT[id].gaps.map(x => ({ q: x[0], a: x[1] })) };
+}
+
+/* ---------- utilities ---------- */
+const $app = document.getElementById('app');
+const ALL = GROUPS.flatMap(g => g.topics.map(t => ({ ...t, group: g, hue: t.hue || g.hue })));
+const byId = id => ALL.find(t => t.id === id);
+
+function tasksFor(t) {
+  const a = ACT[t.id] || {};
+  const tasks = [{ id: t.id + '-read', html: `Study the theory: <a href="#t-${t.id}">${t.title}</a>` }];
+  if (t.custom === 'irregular') tasks.push({ id: 'irr-challenge', html: 'Play the FILL THE ROW challenge at least 3 times and get 60 or more correct answers each time.' });
+  if (a.tr) tasks.push({ id: t.id + '-tr', html: 'Translate the sentences from Spanish into English.', ex: 'tr:' + t.id });
+  if (a.gaps) tasks.push({ id: t.id + '-gap', html: 'Fill in the gaps.', ex: 'gap:' + t.id });
+  if (t.id === 'question-tags') {
+    tasks.push({ id: 'qtags-1', html: 'Complete exercise 1 (30 sentences).', ex: 'qtags-1' });
+    tasks.push({ id: 'qtags-2', html: 'Complete exercise 2 (16 sentences).', ex: 'qtags-2' });
+  }
+  if (t.task && !t.id.startsWith('relative-')) tasks.push({ id: t.id + '-write', html: '<b>Writing task.</b> ' + t.task });
+  return tasks;
+}
+const LESSONS = GROUPS.map(g => ({
+  group: g,
+  lessons: ALL.filter(t => t.group === g && !t.soon).map(t => ({ id: 'l-' + t.id, topic: t, tasks: tasksFor(t) }))
+})).filter(g => g.lessons.length);
+const ALL_LESSONS = LESSONS.flatMap(g => g.lessons);
+const ALL_TASKS = ALL_LESSONS.flatMap(l => l.tasks.map(t => t.id));
+
+/* progress (stored only in this browser) */
+let done = new Set();
+try { done = new Set(JSON.parse(localStorage.getItem('pet-b1-progress-v2') || '[]')); } catch (e) { }
+const saveDone = () => { try { localStorage.setItem('pet-b1-progress-v2', JSON.stringify([...done])); } catch (e) { } };
+const doneCount = () => ALL_TASKS.filter(id => done.has(id)).length;
+const openLessons = new Set();
+let openInit = false;
+
+/* answer matching: contractions are treated as equal to their long forms */
+const PRON = new Set(['he', 'she', 'it', 'that', 'there', 'what', 'who', 'where', 'how', 'here', '']);
+function norm(s) { return s.toLowerCase().replace(/[’‘`´]/g, "'").replace(/\s+/g, ' ').replace(/[.!?,;:]+$/, '').trim(); }
+function variants(raw) {
+  let s = norm(raw).replace(/\bcannot\b/g, 'can not').replace(/\bwon't\b/g, 'will not').replace(/\bshan't\b/g, 'shall not')
+    .replace(/n't\b/g, ' not').replace(/'m\b/g, ' am').replace(/'re\b/g, ' are').replace(/'ve\b/g, ' have').replace(/'ll\b/g, ' will').replace(/\blet's\b/g, 'let us');
+  const toks = s.split(' ').filter(Boolean);
+  let out = [[]];
+  toks.forEach(t => {
+    let alts = [t], m;
+    if ((m = t.match(/^(\w*)'s$/)) && PRON.has(m[1])) alts = [(m[1] + ' is').trim(), (m[1] + ' has').trim()];
+    else if ((m = t.match(/^(\w*)'d$/))) alts = [(m[1] + ' would').trim(), (m[1] + ' had').trim()];
+    const next = [];
+    out.forEach(o => alts.forEach(a => { if (next.length < 32) next.push(o.concat(a)); }));
+    out = next;
+  });
+  return out.map(o => o.join(' ').replace(/\s+/g, ' ').trim());
+}
+function matches(user, answers) {
+  const u = variants(user);
+  return answers.some(a => variants(a).some(v => u.includes(v)));
+}
+
+/* ---------- views ---------- */
+function toc(active) {
+  return GROUPS.map(g => {
+    let sec = null;
+    return `<h4 class="c-${g.hue}"><i></i>${g.name}</h4>` + ALL.filter(t => t.group === g).map(t => {
+      const head = t.sec && t.sec !== sec ? `<h5 class="c-${t.hue}">${t.sec}</h5>` : '';
+      sec = t.sec || sec;
+      return head + `<a href="#t-${t.id}"${t.id === active ? ' aria-current="page"' : ''}>${t.title}</a>`;
+    }).join('');
+  }).join('');
+}
+
+function ring(pct) {
+  const r = 34, c = 2 * Math.PI * r;
+  return `<svg class="ring" viewBox="0 0 80 80" role="img" aria-label="${pct}% complete"><circle cx="40" cy="40" r="${r}" class="rb"/><circle cx="40" cy="40" r="${r}" class="rf" stroke-dasharray="${(c * pct / 100).toFixed(1)} ${c.toFixed(1)}"/><text x="40" y="46" text-anchor="middle">${pct}%</text></svg>`;
+}
+
+function viewHome() {
+  const n = doneCount(), total = ALL_TASKS.length, pct = Math.round(n / total * 100);
+  const nextL = ALL_LESSONS.find(l => l.tasks.some(t => !done.has(t.id)));
+  return `<section class="hero2"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <div class="wrap"><div class="hero-in">
+    <div><span class="eyebrow light">Cambridge English · B1 Preliminary</span>
+    <h1>The <mark>PET</mark> B1 course</h1>
+    <p class="lead light">Grammar theory, the exam model and step-by-step tasks to prepare for the Cambridge PET.</p>
+    ${nextL ? `<p style="margin-top:18px"><a class="cta big" href="#l-${nextL.topic.id}">Continue: ${nextL.topic.title}</a></p>` : ''}</div>
+    <div class="hero-card"><div class="rwrap">${ring(pct)}<div><b>${n} of ${total}</b><span>tasks completed</span></div></div>
+    <div class="facts" aria-label="Exam facts"><div><span>Papers</span><b>4</b></div><div><span>Weight of each paper</span><b>25%</b></div><div><span>Level B1 from</span><b>140 / 170</b></div></div></div>
+  </div></div></section>
+  <div class="wrap">
+  <div class="cards">
+    <a class="card c-blue" style="--i:0" href="#theory"><span class="eyebrow">Section 1</span><h2>Theory</h2><p>${ALL.filter(t => !t.soon).length} topics, each on its own page, from irregular verbs to the passive voice.</p><span class="go">Browse the topics →</span></a>
+    <a class="card c-pink" style="--i:1" href="#exams"><span class="eyebrow">Section 2</span><h2>Exams</h2><p>How the PET works, and every part of Reading, Listening, Writing and Speaking.</p><span class="go">See the exam model →</span></a>
+    <a class="card c-green" style="--i:2" href="#lessons"><span class="eyebrow">Section 3</span><h2>Lessons</h2><p>Tasks and interactive activities for every topic. Translation, gap-fill and writing.</p><span class="go">Go to the tasks →</span></a>
+  </div>
+  <a class="strip c-orange" href="#t-irregular-verbs"><div><b>Irregular verbs challenge</b><span>${IRR.length} verbs. Fill in the missing forms in a new table every round.</span></div><span class="go">Play →</span></a>
+  </div>`;
+}
+
+function viewTheoryIndex() {
+  return `<div class="wrap"><span class="eyebrow">Section 1</span><h1 class="page-title">Theory</h1>
+  <p class="lead">Every topic has its own page with explanations in English and examples with a Spanish translation.</p>
+  ${GROUPS.map(g => { let sec = null; return `<section class="group c-${g.hue}"><h2><i></i>${g.name}</h2><div class="tlist">${ALL.filter(t => t.group === g).map(t => { const head = t.sec && t.sec !== sec ? `<h5 class="c-${t.hue}">${t.sec}</h5>` : ''; sec = t.sec || sec; return head + `<a class="c-${t.hue}" href="#t-${t.id}"><b>${t.title}</b><span>${t.sub}</span></a>`; }).join('')}</div></section>`; }).join('')}
+  </div>`;
+}
+
+function viewTopic(id) {
+  const i = ALL.findIndex(t => t.id === id), t = ALL[i], prev = ALL[i - 1], next = ALL[i + 1];
+  const body = t.custom === 'irregular' ? irregularView() : t.html;
+  return `<div class="wrap">
+  <details class="mtoc"><summary>All topics</summary><nav class="toc">${toc(id)}</nav></details>
+  <div class="split">
+    <nav class="toc" aria-label="Theory topics">${toc(id)}</nav>
+    <article class="article c-${t.hue}">
+      <header class="thead"><span class="eyebrow">${t.group.name}${t.sec ? ' · ' + t.sec : ''}</span><h1>${t.title}</h1><p class="sub">${t.sub}</p></header>
+      <div class="abody">${body}
+      <div class="pager">
+        ${prev ? `<a class="prev" href="#t-${prev.id}"><small>Previous</small>${prev.title}</a>` : '<span></span>'}
+        ${next ? `<a class="next" href="#t-${next.id}"><small>Next</small>${next.title}</a>` : ''}
+      </div>
+      ${t.soon ? '' : `<p style="margin-top:22px"><a class="cta" href="#l-${t.id}">Practise this topic</a></p>`}</div>
+    </article>
+  </div></div>`;
+}
+
+/* ----- irregular verbs ----- */
+let irrTab = 'list', irrRound = null;
+const stripP = s => s.replace(/\s*\(.*?\)/g, '');
+function irrGen() {
+  const idx = IRR.map((_, i) => i).sort(() => Math.random() - 0.5).slice(0, 25);
+  irrRound = idx.map(i => ({ i, c: Math.floor(Math.random() * 4) }));
+}
+function irrCell(v, c) { return [v.v1, v.v2, v.v3, v.es][c]; }
+function irrListHTML() {
+  return `<div class="irr-tools"><label for="irr-filter" class="sr">Search verbs</label><input id="irr-filter" type="search" placeholder="Search a verb or its Spanish translation…" autocomplete="off"><span id="irr-count">${IRR.length} verbs</span></div>
+  <div class="tw tall"><table class="irr"><thead><tr><th>Base form (V1)</th><th>Past simple (V2)</th><th>Past participle (V3)</th><th>Castellano</th></tr></thead><tbody>
+  ${IRR.map(v => `<tr data-s="${(v.v1 + ' ' + v.v2 + ' ' + v.v3 + ' ' + v.es).toLowerCase()}"><td><b>${v.v1}</b> <small>/${v.p1}/</small></td><td><b>${v.v2}</b> <small>/${v.p2}/</small></td><td><b>${v.v3}</b> <small>/${v.p3}/</small></td><td>${v.es}</td></tr>`).join('')}
+  </tbody></table></div>`;
+}
+function irrChallengeHTML() {
+  if (!irrRound) irrGen();
+  return `<div class="irr-game"><h3>Fill the row</h3><p>Every row shows <b>one</b> form. Fill in the other three. In the Spanish column any correct translation counts. Press <b>New table</b> for 25 different verbs.</p>
+  <div class="exbar top"><button class="main" data-irr="check">Check</button><button data-irr="show">Show answers</button><button data-irr="new">New table</button><span class="score" id="irr-score" aria-live="polite"></span></div>
+  <div class="tw tall"><table class="irr game"><thead><tr><th>V1</th><th>V2</th><th>V3</th><th>Castellano</th></tr></thead><tbody>
+  ${irrRound.map((r, ri) => `<tr>${[0, 1, 2, 3].map(c => c === r.c ? `<td class="given">${irrCell(IRR[r.i], c)}</td>` : `<td><input type="text" data-r="${ri}" data-c="${c}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="${['Base form', 'Past simple', 'Past participle', 'Spanish'][c]} of ${IRR[r.i].v1}"><span class="sol" hidden></span></td>`).join('')}</tr>`).join('')}
+  </tbody></table></div></div>`;
+}
+function irregularView() {
+  return `<p class="lead">Many English verbs have irregular past forms. Learn them by heart: you need them for the past simple, the present perfect, the past perfect and the passive voice.</p>
+  <div class="tabs" role="tablist"><button role="tab" data-irr="tab-list" aria-selected="${irrTab === 'list'}">The list (${IRR.length})</button><button role="tab" data-irr="tab-game" aria-selected="${irrTab === 'game'}">Fill the row challenge</button></div>
+  <div id="irr-body">${irrTab === 'list' ? irrListHTML() : irrChallengeHTML()}</div>`;
+}
+function irrAnswers(c, v) {
+  const raw = irrCell(v, c);
+  let parts = [stripP(raw)];
+  raw.split(/\s*[\/,;]\s*/).forEach(p => parts.push(stripP(p)));
+  if (c === 3) raw.split(/\s*[,;]\s*/).forEach(p => { parts.push(p.replace(/\(se\)/g, '')); parts.push(p.replace(/\((se)\)/g, '$1')); });
+  if (c !== 3 && / up$/.test(raw)) parts.push(raw.replace(/ up$/, ''));
+  if (c !== 3) parts.push(raw.replace(/\s*\/\s*/g, '/'));
+  return parts.map(p => p.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')).filter(Boolean);
+}
+function irrCheck(show) {
+  let ok = 0, tot = 0;
+  document.querySelectorAll('#irr-body input').forEach(inp => {
+    const r = irrRound[+inp.dataset.r], c = +inp.dataset.c, v = IRR[r.i];
+    const ans = irrAnswers(c, v), val = inp.value.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\s*\/\s*/g, '/');
+    const good = ans.includes(val); tot++;
+    if (good) ok++;
+    inp.classList.toggle('ok', good && val !== ''); inp.classList.toggle('bad', !good && val !== '');
+    const sol = inp.nextElementSibling;
+    if (show) { sol.hidden = false; sol.textContent = irrCell(v, c); } else if (good) sol.hidden = true;
+  });
+  document.getElementById('irr-score').textContent = ok + ' of ' + tot + ' correct';
+  if (!show && ok >= 60) { done.add('irr-challenge'); saveDone(); }
+}
+
+/* ----- exams ----- */
+function examNav(active) {
+  return `<nav class="subnav" aria-label="Exam sections"><a href="#exams"${active === 'exams' ? ' aria-current="page"' : ''}>Exam model</a>${PAPERS.map(p => `<a class="c-${p.hue}" href="#e-${p.id}"${active === 'e-' + p.id ? ' aria-current="page"' : ''}>${p.name}</a>`).join('')}</nav>`;
+}
+function viewExamOverview() {
+  return `<div class="wrap"><span class="eyebrow">Section 2</span><h1 class="page-title">Exams</h1>
+  ${examNav('exams')}
+  <p class="lead">The PET (Cambridge English B1 Preliminary) checks that you can use English in everyday situations. It has <b>four papers</b> and each one is worth <b>25%</b> of your result.</p>
+  <div class="papers">${PAPERS.map((p, k) => `<a class="paper c-${p.hue}" style="--i:${k}" href="#e-${p.id}"><span class="w">${p.weight}</span><h3>${p.name}</h3><span class="meta">${p.parts.length} ${p.id === 'writing' ? 'tasks' : 'parts'} · ${p.time}</span><span class="go">See the parts →</span></a>`).join('')}</div>
+
+  <h2 class="section-h">The exam at a glance</h2>
+  <div class="tw"><table><thead><tr><th>Paper</th><th>Parts</th><th>Content</th><th>Time</th><th>Weight</th></tr></thead><tbody>
+  ${PAPERS.map(p => `<tr><td><b><a href="#e-${p.id}">${p.name}</a></b></td><td>${p.parts.length}</td><td>${p.qs}</td><td>${p.time}</td><td>${p.weight}</td></tr>`).join('')}
+  </tbody></table></div>
+
+  <h2 class="section-h">Every part</h2>
+  <div class="tw"><table><thead><tr><th>Paper</th><th>Part</th><th>Task type</th><th>Questions</th></tr></thead><tbody>
+  ${PAPERS.flatMap(p => p.parts.map(x => `<tr><td>${p.name}</td><td>Part ${x.n}</td><td>${x.type}</td><td>${p.id === 'speaking' ? x.time : (p.id === 'writing' ? '1 text' : x.q)}</td></tr>`)).join('')}
+  </tbody></table></div>
+
+  <h2 class="section-h">How it is scored</h2>
+  <p>Each paper is converted to the Cambridge English Scale (100 to 170). Your final result is the average of the four papers.</p>
+  <div class="tw"><table><thead><tr><th>Score</th><th>Level</th><th>Result</th></tr></thead><tbody>${SCALE.map(r => `<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table></div>
+  <p class="disclaimer">This summary follows the current exam format. Before the exam date, check times and details in the official Cambridge English handbook.</p>
+  </div>`;
+}
+function viewPaper(id) {
+  const p = PAPERS.find(x => x.id === id);
+  return `<div class="wrap"><span class="eyebrow">Section 2 · Exams</span><h1 class="page-title">${p.name}</h1>
+  ${examNav('e-' + id)}
+  <p class="lead">${p.intro}</p>
+  <div class="facts" style="max-width:36rem;margin-block:18px">
+    <div><span>Time</span><b>${p.time}</b></div><div><span>Content</span><b>${p.qs}</b></div><div><span>Weight in the result</span><b>${p.weight}</b></div>
+  </div>
+  <h2 class="section-h">The parts</h2>
+  ${p.parts.map(x => `<section class="part c-${p.hue}"><div class="pn"><small>Part</small><b>${x.n}</b></div>
+    <h3>${x.type}${x.opts.length ? bub(...x.opts) : ''}<span>${x.time ? x.time : (p.id === 'writing' ? '≈ 100 words' : x.q + ' questions')}</span></h3>
+    <p>${x.what}</p><p class="tip"><b>Tip:</b> ${x.tip}</p></section>`).join('')}
+  ${p.extra ? `<aside class="note">${p.extra}</aside>` : ''}
+  <h2 class="section-h">${p.name} practice exams</h2>
+  ${EXAMS[id].length ? '' : `<div class="slot c-${p.hue}"><b>There are no ${p.name} exams yet</b>The practice exams will be added here.</div>`}
+  </div>`;
+}
+
+/* ----- lessons ----- */
+function exerciseHTML(key) {
+  const ex = getExercise(key);
+  const rows = ex.items.map((it, i) => {
+    if (ex.kind === 'tr') return `<div class="qrow tr"><span class="qn">${i + 1}.</span><div class="qb"><span class="es-q"><i>ES</i> ${it.q}</span><input type="text" id="${key}-${i}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="English translation ${i + 1}" placeholder="Write it in English"><span class="sol" hidden></span></div></div>`;
+    const parts = it.q.split(/_{3,}/);
+    return `<div class="qrow"><span class="qn">${i + 1}.</span><span class="qt">${parts[0]}<input type="text" id="${key}-${i}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Answer ${i + 1}">${parts[1] || ''}</span><span class="sol" hidden></span></div>`;
+  }).join('');
+  return `<div class="exercise" data-ex="${key}"><h4>${ex.title}</h4>${rows}
+  <div class="exbar"><button class="main" data-act="check">Check</button><button data-act="solutions">Show answers</button><button data-act="reset">Clear</button><span class="score" aria-live="polite"></span></div>
+  ${ex.kind === 'tr' ? '<p class="hint">Your answer can be correct even if it is different from the model. Compare the meaning.</p>' : ''}</div>`;
+}
+function lessonHTML(l) {
+  const dn = l.tasks.filter(t => done.has(t.id)).length, complete = dn === l.tasks.length;
+  return `<details class="lesson c-${l.topic.hue}${complete ? ' done' : ''}" data-lid="${l.id}"${openLessons.has(l.id) ? ' open' : ''}>
+    <summary><span class="t">${l.topic.title}</span><span class="st">${dn}/${l.tasks.length}</span></summary>
+    <div class="tasks">${l.tasks.map(t => `<div class="taskwrap"><label class="task"><input type="checkbox" data-task="${t.id}"${done.has(t.id) ? ' checked' : ''}><span class="lz"></span><span class="tx">${t.html}</span></label>${t.ex ? exerciseHTML(t.ex) : ''}</div>`).join('')}</div>
+  </details>`;
+}
+function viewLessons(target) {
+  const n = doneCount(), total = ALL_TASKS.length, pct = Math.round(n / total * 100);
+  if (!openInit) { const f = ALL_LESSONS.find(l => l.tasks.some(t => !done.has(t.id))); if (f) openLessons.add(f.id); openInit = true; }
+  if (target) openLessons.add(target);
+  return `<div class="wrap"><span class="eyebrow">Section 3</span><h1 class="page-title">Lessons and tasks</h1>
+  <p class="lead">One lesson for every theory topic. Study the topic, do the activities and tick each task when it is finished. Your progress is saved in this browser.</p>
+  <div class="progress-box"><div class="row"><span class="big" id="pct">${pct}%</span><span id="pcount">${n} of ${total} tasks completed</span></div><div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><i id="pbar" style="width:${pct}%"></i></div></div>
+  ${LESSONS.map(g => { const gt = g.lessons.flatMap(l => l.tasks), gd = gt.filter(t => done.has(t.id)).length; return `<section class="lgroup c-${g.group.hue}"><h2><i></i>${g.group.name}<span>${gd}/${gt.length}</span></h2>${g.lessons.map(lessonHTML).join('')}</section>`; }).join('')}
+  </div>`;
+}
+
+/* ---------- router ---------- */
+function section(h) { if (h.startsWith('t')) return 'theory'; if (h.startsWith('e')) return 'exams'; if (h.startsWith('l')) return 'lessons'; return 'home'; }
+function render() {
+  let h = (location.hash || '').replace(/^#/, ''), html, title = 'PET B1 Course', target = null;
+  if (h.startsWith('t-') && byId(h.slice(2))) { html = viewTopic(h.slice(2)); title = byId(h.slice(2)).title + ' · PET B1 Course'; }
+  else if (h === 'theory') { html = viewTheoryIndex(); title = 'Theory · PET B1 Course'; }
+  else if (h.startsWith('e-') && PAPERS.some(p => p.id === h.slice(2))) { html = viewPaper(h.slice(2)); title = h.slice(2)[0].toUpperCase() + h.slice(3) + ' · PET B1 Course'; }
+  else if (h === 'exams') { html = viewExamOverview(); title = 'Exams · PET B1 Course'; }
+  else if (h === 'lessons' || (h.startsWith('l-') && ALL_LESSONS.some(l => l.id === h))) { target = h.startsWith('l-') ? h : null; html = viewLessons(target); title = 'Lessons · PET B1 Course'; }
+  else { h = 'home'; html = viewHome(); }
+  $app.className = '';
+  $app.innerHTML = html;
+  void $app.offsetWidth;
+  $app.className = 'enter';
+  document.title = title;
+  const sec = section(h);
+  document.querySelectorAll('.nav a').forEach(a => { if (a.dataset.sec === sec) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+  if (target) { const el = document.querySelector(`[data-lid="${target}"]`); if (el) { el.open = true; el.scrollIntoView(); window.scrollBy(0, -80); } else window.scrollTo(0, 0); }
+  else window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', render);
+
+/* ---------- interaction ---------- */
+function updateProgress(taskId) {
+  const l = ALL_LESSONS.find(x => x.tasks.some(t => t.id === taskId));
+  const d = document.querySelector(`details[data-lid="${l.id}"]`);
+  if (!d) return;
+  const dn = l.tasks.filter(t => done.has(t.id)).length;
+  d.querySelector('.st').textContent = dn + '/' + l.tasks.length;
+  d.classList.toggle('done', dn === l.tasks.length);
+  const grp = LESSONS.find(g => g.lessons.includes(l)), gt = grp.lessons.flatMap(x => x.tasks);
+  d.closest('.lgroup').querySelector('h2 span').textContent = gt.filter(t => done.has(t.id)).length + '/' + gt.length;
+  const n = doneCount(), total = ALL_TASKS.length, pct = Math.round(n / total * 100);
+  document.getElementById('pct').textContent = pct + '%';
+  document.getElementById('pcount').textContent = n + ' of ' + total + ' tasks completed';
+  document.getElementById('pbar').style.width = pct + '%';
+  document.querySelector('[role=progressbar]').setAttribute('aria-valuenow', pct);
+}
+document.addEventListener('change', e => {
+  const cb = e.target.closest('[data-task]');
+  if (!cb) return;
+  if (cb.checked) done.add(cb.dataset.task); else done.delete(cb.dataset.task);
+  saveDone(); updateProgress(cb.dataset.task);
+});
+document.addEventListener('toggle', e => {
+  const d = e.target;
+  if (d.matches && d.matches('details.lesson')) { if (d.open) openLessons.add(d.dataset.lid); else openLessons.delete(d.dataset.lid); }
+}, true);
+document.addEventListener('input', e => {
+  if (e.target.id === 'irr-filter') {
+    const q = e.target.value.trim().toLowerCase(); let n = 0;
+    document.querySelectorAll('.irr tbody tr').forEach(r => { const show = !q || r.dataset.s.includes(q); r.hidden = !show; if (show) n++; });
+    document.getElementById('irr-count').textContent = n + ' verbs';
+  }
+});
+document.addEventListener('click', e => {
+  const g = e.target.closest('[data-irr]');
+  if (g) {
+    const a = g.dataset.irr;
+    if (a === 'tab-list' || a === 'tab-game') { irrTab = a === 'tab-list' ? 'list' : 'game'; render(); return; }
+    if (a === 'new') { irrGen(); document.getElementById('irr-body').innerHTML = irrChallengeHTML(); return; }
+    if (a === 'check') irrCheck(false);
+    if (a === 'show') irrCheck(true);
+    return;
+  }
+  const b = e.target.closest('[data-act]');
+  if (!b) return;
+  const box = b.closest('.exercise'), key = box.dataset.ex, items = getExercise(key).items;
+  const rows = [...box.querySelectorAll('.qrow')], act = b.dataset.act;
+  if (act === 'check') {
+    let ok = 0;
+    rows.forEach((r, i) => {
+      const inp = r.querySelector('input'), good = matches(inp.value, items[i].a.split('|'));
+      inp.classList.toggle('ok', good); inp.classList.toggle('bad', !good && inp.value.trim() !== '');
+      if (good) ok++;
+    });
+    const sc = box.querySelector('.score');
+    sc.textContent = ok === items.length ? 'Perfect! ' + ok + ' of ' + items.length : ok + ' of ' + items.length + ' correct';
+    if (ok === items.length) {
+      const cb = box.closest('.taskwrap').querySelector('[data-task]');
+      if (cb && !cb.checked) { cb.checked = true; done.add(cb.dataset.task); saveDone(); updateProgress(cb.dataset.task); }
+    }
+  } else if (act === 'solutions') {
+    rows.forEach((r, i) => { const s = r.querySelector('.sol'); s.hidden = false; s.textContent = items[i].a.split('|')[0]; });
+  } else {
+    rows.forEach(r => { const inp = r.querySelector('input'); inp.value = ''; inp.classList.remove('ok', 'bad'); r.querySelector('.sol').hidden = true; });
+    box.querySelector('.score').textContent = '';
+  }
+});
+render();
+</script>
+
+</body></html>
